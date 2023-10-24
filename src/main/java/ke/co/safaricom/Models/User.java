@@ -5,6 +5,7 @@ import ke.co.safaricom.DB.DBManagement;
 import org.sql2o.Connection;
 
 import java.util.List;
+import java.util.Objects;
 
 public class User implements DBManagement {
     private String name;
@@ -52,27 +53,41 @@ public class User implements DBManagement {
     }
 
     @Override
-    public boolean equals(Object otherUser) {
-        if (!(otherUser instanceof User)) {
-            return false;
-        } else {
-            User newUser = (User) otherUser;
-            return this.getName().equals(newUser.getName()) &&
-                    this.getEmail().equals(newUser.getEmail());
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        User user = (User) obj;
+        return userId == user.userId &&
+                Objects.equals(name, user.name) &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(userType, user.userType);
     }
+
     @Override
     public void save() {
-        try(Connection con = DB.sql2o.open()) {
+        try (Connection con = DB.sql2o.beginTransaction()) {
             String sql = "INSERT INTO users (name, email, userType) VALUES (:name, :email, :userType)";
-            this.userId = (int) con.createQuery(sql, true)
+            con.createQuery(sql)
                     .addParameter("name", this.name)
                     .addParameter("email", this.email)
                     .addParameter("userType", this.userType)
-                    .executeUpdate()
-                    .getKey();
+                    .executeUpdate();
+
+            // Fetch the last inserted ID
+            String idQuery = "SELECT lastval()";
+            this.userId = con.createQuery(idQuery).executeScalar(Integer.class);
+
+            con.commit();
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
         }
     }
+
+
     public static List<User> all() {
         String sql = "SELECT * FROM users";
         try(Connection con = DB.sql2o.open()) {

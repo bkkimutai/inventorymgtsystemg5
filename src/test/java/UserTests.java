@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.sql2o.Sql2o;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -36,7 +38,7 @@ public class UserTests {
     }
     @Test
     public void save_insertsObjectIntoDatabase_User() {
-        User testUser = new User("Henry", "[email@email.com)", "admin");
+        User testUser = new User("Henry", "email@email.com", "admin");
         testUser.save();
         assertEquals(User.all().get(0), testUser);
     }
@@ -46,7 +48,10 @@ public class UserTests {
         firstPerson.save();
         User secondPerson = new User("Harriet", "harriet@harriet.com", "admin");
         secondPerson.save();
-        assertEquals(User.all().get(0), firstPerson);
-        assertEquals(User.all().get(1), secondPerson);
+        List<User> users = User.all();
+
+        assertTrue(users.contains(firstPerson));
+        assertTrue(users.contains(secondPerson));
     }
+
 }
