@@ -1,0 +1,2 @@
+public interface DatabaseRule1 {
+}

@@ -4,13 +4,13 @@ import ke.co.safaricom.DB.DB;
 import ke.co.safaricom.DB.DBManagement;
 import org.sql2o.Connection;
 
-public class inventoryItem implements DBManagement {
+public class InventoryItem implements DBManagement {
     private int itemId;
     private String itemName;
     private String itemSerial;
     private String itemManufacturer;
     private String assignedPartnerID;
-    public inventoryItem(String itemName,String itemSerial,String itemManufacturer,String assignedPartnerID){
+    public InventoryItem(String itemName, String itemSerial, String itemManufacturer, String assignedPartnerID){
         this.itemName=itemName;
         this.itemSerial=itemSerial;
         this.itemManufacturer=itemManufacturer;
@@ -58,10 +58,10 @@ public class inventoryItem implements DBManagement {
     }
     @Override
     public boolean equals(Object otherInventoryItem) {
-        if (!(otherInventoryItem instanceof inventoryItem)) {
+        if (!(otherInventoryItem instanceof InventoryItem)) {
             return false;
         } else {
-            inventoryItem newInventoryItem = (inventoryItem) otherInventoryItem;
+            InventoryItem newInventoryItem = (InventoryItem) otherInventoryItem;
             return this.getItemName().equals(newInventoryItem.getItemName()) &&
                     this.getItemSerial().equals(newInventoryItem.getItemSerial());
         }

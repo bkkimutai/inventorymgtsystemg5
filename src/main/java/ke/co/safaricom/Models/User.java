@@ -4,6 +4,8 @@ import ke.co.safaricom.DB.DB;
 import ke.co.safaricom.DB.DBManagement;
 import org.sql2o.Connection;
 
+import java.util.List;
+
 public class User implements DBManagement {
     private String name;
     private String email;
@@ -71,5 +73,10 @@ public class User implements DBManagement {
                     .getKey();
         }
     }
-
+    public static List<User> all() {
+        String sql = "SELECT * FROM users";
+        try(Connection con = DB.sql2o.open()) {
+            return con.createQuery(sql).executeAndFetch(User.class);
+        }
+    }
 }
