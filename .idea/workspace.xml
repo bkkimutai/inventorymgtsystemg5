@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/PartnerISPTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseRule1.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +37,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -229,7 +228,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/UserTests.java</url>
-          <line>26</line>
+          <line>28</line>
           <properties class="UserTests" method="getEmail_userInstantiatesWithEmail_String">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -238,7 +237,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/UserTests.java</url>
-          <line>37</line>
+          <line>39</line>
           <properties class="UserTests" method="save_insertsObjectIntoDatabase_User">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -247,7 +246,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/UserTests.java</url>
-          <line>39</line>
+          <line>41</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
