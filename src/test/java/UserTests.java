@@ -18,7 +18,7 @@ public class UserTests {
     @Test
     public void user_instantiatesCorrectly_true() {
         User testUser = new User ("Henry", "email@email.com", "admin");
-        assertTrue(true);
+        assertEquals(true,testUser instanceof User);
     }
     @Test
     public void getName_userInstantiatesWithName_Henry() {
@@ -52,6 +52,21 @@ public class UserTests {
 
         assertTrue(users.contains(firstPerson));
         assertTrue(users.contains(secondPerson));
+    }
+    @Test
+    public void save_assignsIdToObject() {
+        User testPerson = new User("Henry", "henry@henry.com", "admin");
+        testPerson.save();
+        List<User> savedPerson = User.all();
+        assertEquals(1, savedPerson.get(0).getUserId());
+    }
+    @Test
+    public void find_returnsUsersWithSameId_secondUser() {
+        User firstUser = new User("Henry", "henry@henry.com", "admin");
+        firstUser.save();
+        User secondUser = new User("Harriet", "harriet@harriet.com", "admin");
+        secondUser.save();
+        assertEquals(User.find(firstUser.getUserId()), firstUser);
     }
 
 }

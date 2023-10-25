@@ -14,16 +14,14 @@ public class DatabaseExtension implements BeforeEachCallback, AfterEachCallback 
     }
     @Override
     public void beforeEach(ExtensionContext context) {
-        try (Connection con = sql2o.open()) {
-            String createTableQuery = "CREATE TABLE IF NOT EXISTS users (id serial PRIMARY KEY, name varchar, email varchar, usertype varchar);";
-            con.createQuery(createTableQuery).executeUpdate();
-        }
     }
     @Override
     public void afterEach(ExtensionContext context) {
         try (Connection con = sql2o.open()) {
-            String deleteUsersQuery = "DELETE FROM users;";
+            String deleteUsersQuery = "DELETE FROM users *;";
+            String deleteInventoryItemsQuery = "DELETE FROM inventory *;";
             con.createQuery(deleteUsersQuery).executeUpdate();
+            con.createQuery(deleteInventoryItemsQuery).executeUpdate();
         }
     }
 }

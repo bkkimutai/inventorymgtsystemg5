@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/PartnerISPTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseRule1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/InventoryItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/InventoryItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseExtension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/InventoryItemTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InventoryItemTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,8 +85,8 @@
       <recent name="ke.co.safaricom.Models" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.UserTests.all_returnsAllInstancesOfUsers_true">
-    <configuration name="UserTests.all_returnsAllInstancesOfUsers_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.InventoryItemTests.save_insertsObjectIntoDatabase_User">
+    <configuration name="InventoryItemTests.equals_returnsTrueIfNameSerialAndManufacturerAreSame_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -95,7 +99,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;UserTests.all_returnsAllInstancesOfUsers_true&quot;" />
+            <option value="&quot;InventoryItemTests.equals_returnsTrueIfNameSerialAndManufacturerAreSame_true&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -106,7 +110,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UserTests.equals_returnsTrueIfNameAndEmailAreSame_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="InventoryItemTests.getName_ItemInstantiatesWithName_MWRadio" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -119,7 +123,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;UserTests.equals_returnsTrueIfNameAndEmailAreSame_true&quot;" />
+            <option value="&quot;InventoryItemTests.getName_ItemInstantiatesWithName_MWRadio&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -130,7 +134,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UserTests.getEmail_userInstantiatesWithEmail_String" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="InventoryItemTests.getSerial_userInstantiatesWithSerial_String" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -143,7 +147,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;UserTests.getEmail_userInstantiatesWithEmail_String&quot;" />
+            <option value="&quot;InventoryItemTests.getSerial_userInstantiatesWithSerial_String&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -154,7 +158,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UserTests.getName_userInstantiatesWithName_Henry" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="InventoryItemTests.save_insertsObjectIntoDatabase_User" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -167,7 +171,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;UserTests.getName_userInstantiatesWithName_Henry&quot;" />
+            <option value="&quot;InventoryItemTests.save_insertsObjectIntoDatabase_User&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -204,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.UserTests.all_returnsAllInstancesOfUsers_true" />
+        <item itemvalue="Gradle.InventoryItemTests.save_insertsObjectIntoDatabase_User" />
+        <item itemvalue="Gradle.InventoryItemTests.equals_returnsTrueIfNameSerialAndManufacturerAreSame_true" />
+        <item itemvalue="Gradle.InventoryItemTests.getSerial_userInstantiatesWithSerial_String" />
+        <item itemvalue="Gradle.InventoryItemTests.getName_ItemInstantiatesWithName_MWRadio" />
         <item itemvalue="Gradle.UserTests.save_insertsObjectIntoDatabase_User" />
-        <item itemvalue="Gradle.UserTests.equals_returnsTrueIfNameAndEmailAreSame_true" />
-        <item itemvalue="Gradle.UserTests.getName_userInstantiatesWithName_Henry" />
-        <item itemvalue="Gradle.UserTests.getEmail_userInstantiatesWithEmail_String" />
       </list>
     </recent_temporary>
   </component>
@@ -237,12 +241,48 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/UserTests.java</url>
-          <line>39</line>
-          <properties class="UserTests" method="save_insertsObjectIntoDatabase_User">
+          <line>33</line>
+          <properties class="UserTests" method="equals_returnsTrueIfNameAndEmailAreSame_true">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/UserTests.java</url>
+          <line>63</line>
+          <properties class="UserTests" method="find_returnsUsersWithSameId_secondUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/UserTests.java</url>
+          <line>56</line>
+          <properties class="UserTests" method="save_assignsIdToObject">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/InventoryItemTests.java</url>
+          <line>31</line>
+          <properties class="InventoryItemTests" method="equals_returnsTrueIfNameSerialAndManufacturerAreSame_true">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/InventoryItemTests.java</url>
+          <line>37</line>
+          <properties class="InventoryItemTests" method="save_insertsObjectIntoDatabase_User">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/UserTests.java</url>

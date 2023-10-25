@@ -53,20 +53,31 @@ public class User implements DBManagement {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
+    public boolean equals(Object otherUser){
+        if (!(otherUser instanceof User)) {
             return false;
+        } else {
+            User newUser= (User) otherUser;
+            return this.getName().equals(newUser.getName()) &&
+                    this.getEmail().equals(newUser.getEmail()) &&
+                    this.getUserType().equals(newUser.getUserType());
         }
-        User user = (User) obj;
-        return userId == user.userId &&
-                Objects.equals(name, user.name) &&
-                Objects.equals(email, user.email) &&
-                Objects.equals(userType, user.userType);
     }
 
+//    @Override
+//    public void save() {
+//        try (Connection con = DB.sql2o.beginTransaction()) {
+//            String sql = "INSERT INTO users (name, email, userType) VALUES (:name, :email, :userType)";
+//            this.userId = (int) con.createQuery(sql, true)
+//                    .addParameter("name", this.name)
+//                    .addParameter("email", this.email)
+//                    .addParameter("userType", this.userType)
+//                    .executeUpdate()
+//                    .getKey();
+//        } catch (Exception exception) {
+//            System.out.println(exception.getMessage());
+//        }
+//    }
     @Override
     public void save() {
         try (Connection con = DB.sql2o.beginTransaction()) {
@@ -76,8 +87,6 @@ public class User implements DBManagement {
                     .addParameter("email", this.email)
                     .addParameter("userType", this.userType)
                     .executeUpdate();
-
-            // Fetch the last inserted ID
             String idQuery = "SELECT lastval()";
             this.userId = con.createQuery(idQuery).executeScalar(Integer.class);
 
@@ -87,11 +96,18 @@ public class User implements DBManagement {
         }
     }
 
-
     public static List<User> all() {
         String sql = "SELECT * FROM users";
         try(Connection con = DB.sql2o.open()) {
             return con.createQuery(sql).executeAndFetch(User.class);
+        }
+    }
+    public static User find(int userId) {
+        try(Connection con = DB.sql2o.open()) {
+            String sql = "SELECT * FROM users where userId = :userId";
+            return con.createQuery(sql)
+                    .addParameter("userId", userId)
+                    .executeAndFetchFirst(User.class);
         }
     }
 }
