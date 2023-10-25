@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/InventoryItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/InventoryItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseExtension.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/InventoryItemTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InventoryItemTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +80,31 @@
       <recent name="ke.co.safaricom.Models" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.InventoryItemTests.save_insertsObjectIntoDatabase_User">
+  <component name="RunManager" selected="Gradle.InventoryItemTests.all_returnsAllInstancesOfItemss_true">
+    <configuration name="InventoryItemTests.all_returnsAllInstancesOfItemss_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;InventoryItemTests.all_returnsAllInstancesOfItemss_true&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="InventoryItemTests.equals_returnsTrueIfNameSerialAndManufacturerAreSame_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -182,37 +201,13 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UserTests.save_insertsObjectIntoDatabase_User" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;UserTests.save_insertsObjectIntoDatabase_User&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.InventoryItemTests.all_returnsAllInstancesOfItemss_true" />
         <item itemvalue="Gradle.InventoryItemTests.save_insertsObjectIntoDatabase_User" />
         <item itemvalue="Gradle.InventoryItemTests.equals_returnsTrueIfNameSerialAndManufacturerAreSame_true" />
         <item itemvalue="Gradle.InventoryItemTests.getSerial_userInstantiatesWithSerial_String" />
         <item itemvalue="Gradle.InventoryItemTests.getName_ItemInstantiatesWithName_MWRadio" />
-        <item itemvalue="Gradle.UserTests.save_insertsObjectIntoDatabase_User" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +263,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/InventoryItemTests.java</url>
-          <line>31</line>
+          <line>33</line>
           <properties class="InventoryItemTests" method="equals_returnsTrueIfNameSerialAndManufacturerAreSame_true">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -277,7 +272,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/InventoryItemTests.java</url>
-          <line>37</line>
+          <line>39</line>
           <properties class="InventoryItemTests" method="save_insertsObjectIntoDatabase_User">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

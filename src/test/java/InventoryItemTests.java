@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.sql2o.Sql2o;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -39,6 +41,17 @@ public class InventoryItemTests {
         InventoryItem testItem = new InventoryItem("MWRadio", "AAAAA", "Radwin", "Broadband");
         testItem.save();
         assertEquals(InventoryItem.all().get(0), testItem);
+    }
+
+    @Test
+    public void all_returnsAllInstancesOfItemss_true() {
+        InventoryItem firstItem = new InventoryItem("MWRadio", "AAAAA", "Radwin", "Broadband");
+        firstItem.save();
+        InventoryItem secondItem = new InventoryItem("AR169", "BBBBB", "Huawei", "Fireside");
+        secondItem.save();
+        List<InventoryItem> items = InventoryItem.all();
+        assertTrue(items.contains(firstItem));
+        assertTrue(items.contains(secondItem));
     }
 
 }
