@@ -53,5 +53,20 @@ public class InventoryItemTests {
         assertTrue(items.contains(firstItem));
         assertTrue(items.contains(secondItem));
     }
+    @Test
+    public void save_assignsIdToObject() {
+        InventoryItem testItem = new InventoryItem("AR169", "BBBBB", "Huawei", "Fireside");
+        testItem.save();
+        List<InventoryItem> savedItem = InventoryItem.all();
+        assertEquals(1, savedItem.get(0).getItemId());
+    }
+    @Test
+    public void find_returnsItemsWithSameId_secondItem() {
+        InventoryItem firstItem = new InventoryItem("MWRadio", "AAAAA", "Radwin", "Broadband");
+        firstItem.save();
+        InventoryItem secondItem = new InventoryItem("AR169", "BBBBB", "Huawei", "Fireside");
+        secondItem.save();
+        assertEquals(InventoryItem.find(firstItem.getItemId()), firstItem);
+    }
 
 }

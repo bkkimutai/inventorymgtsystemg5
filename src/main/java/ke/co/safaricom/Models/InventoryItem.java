@@ -110,7 +110,7 @@ public class InventoryItem implements DBManagement {
     }
     public static InventoryItem find(int itemId) {
         try(Connection con = DB.sql2o.open()) {
-            String sql = "SELECT * FROM users where userId = :userId";
+            String sql = "SELECT * FROM inventory where itemId = :itemId";
             return con.createQuery(sql)
                     .addParameter("itemId", itemId)
                     .executeAndFetchFirst(InventoryItem.class);
