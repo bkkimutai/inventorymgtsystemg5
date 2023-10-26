@@ -68,5 +68,4 @@ public class InventoryItemTests {
         secondItem.save();
         assertEquals(InventoryItem.find(firstItem.getItemId()), firstItem);
     }
-
 }

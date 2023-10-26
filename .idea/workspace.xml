@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/InventoryItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/InventoryItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/PartnerISP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/PartnerISP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseExtension.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/InventoryItemTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InventoryItemTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PartnerISPTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PartnerISPTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,8 +84,8 @@
       <recent name="ke.co.safaricom.Models" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.InventoryItemTests.find_returnsItemsWithSameId_secondItem">
-    <configuration name="InventoryItemTests.all_returnsAllInstancesOfItemss_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.PartnerISPTests.find_returnsISPsWithSameId_secondISP">
+    <configuration name="PartnerISPTests.all_returnsAllInstancesOfPartnerISPs_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -96,7 +98,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;InventoryItemTests.all_returnsAllInstancesOfItemss_true&quot;" />
+            <option value="&quot;PartnerISPTests.all_returnsAllInstancesOfPartnerISPs_true&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -107,7 +109,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="InventoryItemTests.equals_returnsTrueIfNameSerialAndManufacturerAreSame_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PartnerISPTests.equals_returnsTrueIfNameAndEmailAreSame_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -120,7 +122,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;InventoryItemTests.equals_returnsTrueIfNameSerialAndManufacturerAreSame_true&quot;" />
+            <option value="&quot;PartnerISPTests.equals_returnsTrueIfNameAndEmailAreSame_true&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -131,7 +133,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="InventoryItemTests.find_returnsItemsWithSameId_secondItem" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PartnerISPTests.find_returnsISPsWithSameId_secondISP" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -144,7 +146,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;InventoryItemTests.find_returnsItemsWithSameId_secondItem&quot;" />
+            <option value="&quot;PartnerISPTests.find_returnsISPsWithSameId_secondISP&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -155,7 +157,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="InventoryItemTests.save_assignsIdToObject" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PartnerISPTests.save_assignsIdToObject" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -168,7 +170,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;InventoryItemTests.save_assignsIdToObject&quot;" />
+            <option value="&quot;PartnerISPTests.save_assignsIdToObject&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -179,7 +181,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="InventoryItemTests.save_insertsObjectIntoDatabase_User" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PartnerISPTests.save_insertsObjectIntoDatabase_PartnerISP" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -192,7 +194,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;InventoryItemTests.save_insertsObjectIntoDatabase_User&quot;" />
+            <option value="&quot;PartnerISPTests.save_insertsObjectIntoDatabase_PartnerISP&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -205,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.InventoryItemTests.find_returnsItemsWithSameId_secondItem" />
-        <item itemvalue="Gradle.InventoryItemTests.save_assignsIdToObject" />
-        <item itemvalue="Gradle.InventoryItemTests.all_returnsAllInstancesOfItemss_true" />
-        <item itemvalue="Gradle.InventoryItemTests.save_insertsObjectIntoDatabase_User" />
-        <item itemvalue="Gradle.InventoryItemTests.equals_returnsTrueIfNameSerialAndManufacturerAreSame_true" />
+        <item itemvalue="Gradle.PartnerISPTests.find_returnsISPsWithSameId_secondISP" />
+        <item itemvalue="Gradle.PartnerISPTests.save_assignsIdToObject" />
+        <item itemvalue="Gradle.PartnerISPTests.all_returnsAllInstancesOfPartnerISPs_true" />
+        <item itemvalue="Gradle.PartnerISPTests.save_insertsObjectIntoDatabase_PartnerISP" />
+        <item itemvalue="Gradle.PartnerISPTests.equals_returnsTrueIfNameAndEmailAreSame_true" />
       </list>
     </recent_temporary>
   </component>
@@ -289,6 +291,24 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/PartnerISPTests.java</url>
+          <line>45</line>
+          <properties class="PartnerISPTests" method="all_returnsAllInstancesOfPartnerISPs_true">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/PartnerISPTests.java</url>
+          <line>56</line>
+          <properties class="PartnerISPTests" method="save_assignsIdToObject">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/UserTests.java</url>

@@ -20,8 +20,10 @@ public class DatabaseExtension implements BeforeEachCallback, AfterEachCallback 
         try (Connection con = sql2o.open()) {
             String deleteUsersQuery = "DELETE FROM users *;";
             String deleteInventoryItemsQuery = "DELETE FROM inventory *;";
+            String deletePartnerISPsQuery = "DELETE FROM partnerisps *;";
             con.createQuery(deleteUsersQuery).executeUpdate();
             con.createQuery(deleteInventoryItemsQuery).executeUpdate();
+            con.createQuery(deletePartnerISPsQuery).executeUpdate();
         }
     }
 }
