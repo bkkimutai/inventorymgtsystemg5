@@ -10,15 +10,15 @@ public class ItemWithPartnerISP {
     private int itemId;
     private String itemName;
     private String itemSerial;
-    private int assignedPartnerID;
-    private String name;
+    private int partnerId;
+    private String partnerName;
 
-    public ItemWithPartnerISP(int itemId, String itemName, String itemSerial, int assignedPartnerID, String name) {
+    public ItemWithPartnerISP(int itemId, String itemName, String itemSerial, int partnerId, String partnerName) {
         this.itemId = itemId;
         this.itemName = itemName;
         this.itemSerial = itemSerial;
-        this.assignedPartnerID = assignedPartnerID;
-        this.name = name;
+        this.partnerId = partnerId;
+        this.partnerName = partnerName;
     }
 
     public int getItemId() {
@@ -45,31 +45,32 @@ public class ItemWithPartnerISP {
         this.itemSerial = itemSerial;
     }
 
-    public int getAssignedPartnerID() {
-        return assignedPartnerID;
+    public int getPartnerId() {
+        return partnerId;
     }
 
-    public void setAssignedPartnerID(int partnerId) {
+    public void setPartnerId(int partnerId) {
     }
 
-    public String getName() {
-        return name;
+    public String getPartnerName() {
+        return partnerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPartnerName(String partnerName) {
+        this.partnerName = partnerName;
     }
 
     public static List<ItemWithPartnerISP> getAllInventoryWithISPs() {
         try (Connection connection = sql2o.open()) {
             return connection.createQuery(
-                            "SELECT h.itemId, h.itemName, h.itemSerial h.assignedPartnerID, s.name" +
-                                    "FROM inventory h " +
-                                    "INNER JOIN partnerisps s ON h.assignedPartnerID = s.partnerId;")
+                            "SELECT i.itemId, i.itemName, i.itemSerial, i.partnerId, p.partnerName" +
+                                    " FROM inventory i " +
+                                    "INNER JOIN partnerisps p ON i.partnerId = p.partnerId;")
                     .executeAndFetch(ItemWithPartnerISP.class);
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
             return null;
         }
     }
+
 }

@@ -7,26 +7,26 @@ import org.sql2o.Connection;
 import java.util.List;
 
 public class PartnerISP implements DBManagement {
-    private String name;
-    private String email;
+    private String partnerName;
+    private String partnerEmail;
     private String description;
     private int partnerId;
 
-    public PartnerISP(String name, String description, String email) {
-        this.name = name;
+    public PartnerISP(String partnerName, String description, String partnerEmail) {
+        this.partnerName = partnerName;
         this.description = description;
-        this.email =email;
+        this.partnerEmail = partnerEmail;
     }
 
-    public String getName() {
-        return name;
+    public String getPartnerName() {
+        return partnerName;
     }
-    public String getEmail(){
-        return email;
+    public String getPartnerEmail(){
+        return partnerEmail;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPartnerName(String partnerName) {
+        this.partnerName = partnerName;
     }
 
     public String getDescription() {
@@ -50,9 +50,9 @@ public class PartnerISP implements DBManagement {
             return false;
         } else {
             PartnerISP newPartnerISP = (PartnerISP) otherPartnerISP;
-            return this.getName().equals(newPartnerISP.getName()) &&
+            return this.getPartnerName().equals(newPartnerISP.getPartnerName()) &&
                     this.getDescription().equals(newPartnerISP.getDescription())&&
-                    this.getEmail().equals(newPartnerISP.getEmail());
+                    this.getPartnerEmail().equals(newPartnerISP.getPartnerEmail());
         }
     }
 //    @Override
@@ -69,10 +69,10 @@ public class PartnerISP implements DBManagement {
     @Override
     public void save() {
         try (Connection con = DB.sql2o.beginTransaction()) {
-            String sql = "INSERT INTO partnerISPs (name, email, description) VALUES (:name, :email, :description)";
+            String sql = "INSERT INTO partnerISPs (partnerName, partnerEmail, description) VALUES (:partnerName, :partnerEmail, :description)";
             con.createQuery(sql)
-                    .addParameter("name", this.name)
-                    .addParameter("email", this.email)
+                    .addParameter("partnerName", this.partnerName)
+                    .addParameter("partnerEmail", this.partnerEmail)
                     .addParameter("description", this.description)
                     .executeUpdate();
             String idQuery = "SELECT lastval()";

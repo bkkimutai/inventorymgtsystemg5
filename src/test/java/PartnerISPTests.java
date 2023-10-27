@@ -1,5 +1,4 @@
 import ke.co.safaricom.Models.PartnerISP;
-import ke.co.safaricom.Models.User;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.sql2o.Sql2o;
@@ -23,12 +22,12 @@ public class PartnerISPTests {
     @Test
     public void getName_ispInstantiatesWithName_Broadband() {
         PartnerISP testISP = new PartnerISP("Broadband", "Nairobi East and Environs", "email@broadbanc.com");
-        assertEquals("Broadband", testISP.getName());
+        assertEquals("Broadband", testISP.getPartnerName());
     }
     @Test
     public void getEmail_ISPInstantiatesWithEmail_String() {
         PartnerISP testISP = new PartnerISP("Broadband", "Nairobi East and Environs", "email@broadbanc.com");
-        assertEquals("email@broadbanc.com", testISP.getEmail());
+        assertEquals("email@broadbanc.com", testISP.getPartnerEmail());
     }
     @Test
     public void equals_returnsTrueIfNameAndEmailAreSame_true() {

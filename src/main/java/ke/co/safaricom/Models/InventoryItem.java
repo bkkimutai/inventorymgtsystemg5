@@ -11,12 +11,12 @@ public class InventoryItem implements DBManagement {
     private String itemName;
     private String itemSerial;
     private String itemManufacturer;
-    private String assignedPartnerID;
-    public InventoryItem(String itemName, String itemSerial, String itemManufacturer, String assignedPartnerID){
+    private int partnerId;
+    public InventoryItem(String itemName, String itemSerial, String itemManufacturer, int partnerId){
         this.itemName=itemName;
         this.itemSerial=itemSerial;
         this.itemManufacturer=itemManufacturer;
-        this.assignedPartnerID=assignedPartnerID;
+        this.partnerId = partnerId;
     }
 
     public int getItemId() {
@@ -51,12 +51,12 @@ public class InventoryItem implements DBManagement {
         this.itemManufacturer = itemManufacturer;
     }
 
-    public String getAssignedPartnerID() {
-        return assignedPartnerID;
+    public int getPartnerId() {
+        return partnerId;
     }
 
-    public void setAssignedPartnerID(String assignedPartnerID) {
-        this.assignedPartnerID = assignedPartnerID;
+    public void setPartnerId(int partnerId) {
+        this.partnerId = partnerId;
     }
     @Override
     public boolean equals(Object otherInventoryItem) {
@@ -86,13 +86,13 @@ public class InventoryItem implements DBManagement {
     @Override
     public void save() {
         try (Connection con = DB.sql2o.beginTransaction()) {
-            String sql = "INSERT INTO Inventory (itemName, itemSerial, itemManufacturer, assignedPartnerID) " +
-                    "VALUES (:itemName, :itemSerial, :itemManufacturer, :assignedPartnerID)";
+            String sql = "INSERT INTO Inventory (itemName, itemSerial, itemManufacturer, partnerId)" +
+                    "VALUES (:itemName, :itemSerial, :itemManufacturer, :partnerId)";
             con.createQuery(sql)
                     .addParameter("itemName", this.itemName)
                     .addParameter("itemSerial", this.itemSerial)
                     .addParameter("itemManufacturer", this.itemManufacturer)
-                    .addParameter("assignedPartnerID", this.assignedPartnerID)
+                    .addParameter("partnerId", this.partnerId)
                     .executeUpdate();
             String idQuery = "SELECT lastval()";
             this.itemId = con.createQuery(idQuery).executeScalar(Integer.class);

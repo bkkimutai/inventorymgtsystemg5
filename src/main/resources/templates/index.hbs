@@ -3,24 +3,22 @@
 
     <div class="container text-center">
         {{#if InventoryWithISP}}
-            <h1>Super Heroes!</h1>
-            <p><a class="btn btn-outline-primary" href="/heros/new">+ Add New Hero</a></p>
-            <p data-bs-toggle="tooltip" data-bs-placement="top"
-               title="Call from Thanos, All heroes will be wiped, the action is irreversible"><a
-                    class="btn btn-danger" href="/squads/delete">Destroying Planet Earth Prohibited! <i
-                    class="fa fa-skull-crossbones"></i> </a></p>
+            <p><a class="btn btn-outline-primary" href="/inventory/new">+ Add New Inventory</a></p>
             <div class="container text-start mx-auto">
                 <div class="row">
                     {{#each InventoryWithISP}}
                         <div class="col-md-4">
                             <div class="card mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{itemName}}</h5>
-                                    <p class="card-text"><a href="/squads/{{partnerId}}">Hero Squad: {{name}}</a></p>
-                                    <a href="squads/{{squadId}}/heros/{{heroId}}" class="btn btn-primary"> Spy On {{itemName}}</a>
+                                    <ul style="list-style-type: disc; padding-left: 0;">
+                                        <li style="text-align: left;">Inventory Name: {{itemName}}</li>
+                                        <li style="text-align: left;">Assigned Partner:<a href="/partnerisps/{{partnerId}}">{{partnerName}}</a></li>
+                                        <li style="text-align: left;">Re-assign <a href="partnerisps/{{partnerId}}/inventories/{{itemId}}"> {{itemName}}</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
+
                     {{/each}}
                 </div>
             </div>
