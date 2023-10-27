@@ -42,6 +42,26 @@ public class App {
             return null;
         }, new HandlebarsTemplateEngine());
 
+        //display form to create a new partner ISP
+        get("/partnerisps/new", (request, response) -> {
+            Map<String, Object> payload = new HashMap<>();
+//            List<Squad> squads = heroSquadDao.getAllSquads();
+//            payload.put("squads", squads);
+            return new ModelAndView(payload, "new-partnerisp.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //process new Partner
+        post("/partnerisps", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            String partnerName = request.queryParams("partnerName");
+            String partnerEmail = request.queryParams("partnerEmail");
+            String description = request.queryParams("description");
+            PartnerISP newISP = new PartnerISP(partnerName, partnerEmail, description);
+            newISP.save();
+            response.redirect("/");
+            return null;
+        }, new HandlebarsTemplateEngine());
+
     }
 
 }
