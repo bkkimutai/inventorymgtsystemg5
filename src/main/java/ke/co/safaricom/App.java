@@ -2,6 +2,7 @@ package ke.co.safaricom;
 import ke.co.safaricom.Models.InventoryItem;
 import ke.co.safaricom.Models.ItemWithPartnerISP;
 import ke.co.safaricom.Models.PartnerISP;
+import ke.co.safaricom.dao.Sql2oInventoryItemDao;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import java.util.HashMap;
@@ -37,7 +38,7 @@ public class App {
             String itemManufacturer = request.queryParams("itemManufacturer");
             int partnerId = Integer.parseInt(request.queryParams("partnerId"));
             InventoryItem newInventory = new InventoryItem(itemName, itemSerial, itemManufacturer, partnerId);
-            newInventory.save();
+            Sql2oInventoryItemDao.addInventory(newInventory);
             response.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());

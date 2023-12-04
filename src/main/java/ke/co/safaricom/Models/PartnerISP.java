@@ -1,12 +1,11 @@
 package ke.co.safaricom.Models;
 
 import ke.co.safaricom.DB.DB;
-import ke.co.safaricom.DB.DBManagement;
 import org.sql2o.Connection;
 
 import java.util.List;
 
-public class PartnerISP implements DBManagement {
+public class PartnerISP {
     private String partnerName;
     private String partnerEmail;
     private String description;

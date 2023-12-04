@@ -1,5 +1,5 @@
 import ke.co.safaricom.Models.InventoryItem;
-import ke.co.safaricom.Models.User;
+import ke.co.safaricom.dao.Sql2oInventoryItemDao;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.sql2o.Sql2o;
@@ -39,33 +39,33 @@ public class InventoryItemTests {
     @Test
     public void save_insertsObjectIntoDatabase_User() {
         InventoryItem testItem = new InventoryItem("MWRadio", "AAAAA", "Radwin", 1);
-        testItem.save();
-        assertEquals(InventoryItem.all().get(0), testItem);
+        Sql2oInventoryItemDao.addInventory(testItem);
+        assertEquals(Sql2oInventoryItemDao.getAllInventory().get(0), testItem);
     }
 
     @Test
     public void all_returnsAllInstancesOfItemss_true() {
         InventoryItem firstItem = new InventoryItem("MWRadio", "AAAAA", "Radwin", 1);
-        firstItem.save();
+        Sql2oInventoryItemDao.addInventory(firstItem);
         InventoryItem secondItem = new InventoryItem("AR169", "BBBBB", "Huawei", 2);
-        secondItem.save();
-        List<InventoryItem> items = InventoryItem.all();
+        Sql2oInventoryItemDao.addInventory(secondItem);
+        List<InventoryItem> items = Sql2oInventoryItemDao.getAllInventory();
         assertTrue(items.contains(firstItem));
         assertTrue(items.contains(secondItem));
     }
     @Test
     public void save_assignsIdToObject() {
         InventoryItem testItem = new InventoryItem("AR169", "BBBBB", "Huawei", 2);
-        testItem.save();
-        List<InventoryItem> savedItem = InventoryItem.all();
+        Sql2oInventoryItemDao.addInventory(testItem);
+        List<InventoryItem> savedItem = Sql2oInventoryItemDao.getAllInventory();
         assertEquals(1, savedItem.get(0).getItemId());
     }
     @Test
     public void find_returnsItemsWithSameId_secondItem() {
         InventoryItem firstItem = new InventoryItem("MWRadio", "AAAAA", "Radwin", 1);
-        firstItem.save();
+        Sql2oInventoryItemDao.addInventory(firstItem);
         InventoryItem secondItem = new InventoryItem("AR169", "BBBBB", "Huawei", 2);
-        secondItem.save();
-        assertEquals(InventoryItem.find(firstItem.getItemId()), firstItem);
+        Sql2oInventoryItemDao.addInventory(secondItem);
+        assertEquals(Sql2oInventoryItemDao.findInventoryById(firstItem.getItemId()), firstItem);
     }
 }
