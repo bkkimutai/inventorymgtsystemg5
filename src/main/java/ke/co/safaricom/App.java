@@ -63,7 +63,6 @@ public class App {
             response.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());
-
     }
 
 }

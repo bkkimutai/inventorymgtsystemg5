@@ -12,7 +12,7 @@ import static ke.co.safaricom.DB.DB.sql2o;
 public class Sql2oPartnerISPDao implements PartnerISPDao{
 
     public static void addPartnerISP(PartnerISP newPartnerISP) {
-        try (Connection con = DB.sql2o.beginTransaction()) {
+        try (Connection con = DB.sql2o.open()) {
             String sql = "INSERT INTO partnerISPs (partnerName, partnerEmail, description) VALUES (:partnerName, :partnerEmail, :description)";
             con.createQuery(sql)
                     .addParameter("partnerName", newPartnerISP.getPartnerName())

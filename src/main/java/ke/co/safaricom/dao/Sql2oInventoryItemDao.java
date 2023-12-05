@@ -11,8 +11,8 @@ import static ke.co.safaricom.DB.DB.sql2o;
 
 public class Sql2oInventoryItemDao implements InventoryItemDao{
     public static void addInventory(InventoryItem newInventory){
-        try (Connection con = DB.sql2o.beginTransaction()) {
-            String sql = "INSERT INTO Inventory (itemName, itemSerial, itemManufacturer, partnerId) " +
+        try (Connection con = DB.sql2o.open()) {
+            String sql = "INSERT INTO inventory (itemName, itemSerial, itemManufacturer, partnerId) " +
                     "VALUES (:itemName, :itemSerial, :itemManufacturer, :partnerId)";
             con.createQuery(sql)
                     .addParameter("itemName", newInventory.getItemName())
