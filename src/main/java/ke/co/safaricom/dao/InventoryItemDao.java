@@ -8,9 +8,7 @@ import java.util.List;
 
 public interface InventoryItemDao {
     //create
-    static void addInventory(InventoryItem newInventory) {
-
-    }
+    static void addInventory(InventoryItem newInventory){};
 
     //read
     static List<InventoryItem> getAllInventory() {

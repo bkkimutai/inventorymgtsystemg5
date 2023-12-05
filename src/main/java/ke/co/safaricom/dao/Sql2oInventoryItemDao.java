@@ -10,10 +10,9 @@ import java.util.List;
 import static ke.co.safaricom.DB.DB.sql2o;
 
 public class Sql2oInventoryItemDao implements InventoryItemDao{
-
     public static void addInventory(InventoryItem newInventory){
         try (Connection con = DB.sql2o.beginTransaction()) {
-            String sql = "INSERT INTO Inventory (itemName, itemSerial, itemManufacturer, partnerId)" +
+            String sql = "INSERT INTO Inventory (itemName, itemSerial, itemManufacturer, partnerId) " +
                     "VALUES (:itemName, :itemSerial, :itemManufacturer, :partnerId)";
             con.createQuery(sql)
                     .addParameter("itemName", newInventory.getItemName())
@@ -22,7 +21,7 @@ public class Sql2oInventoryItemDao implements InventoryItemDao{
                     .addParameter("partnerId", newInventory.getPartnerId())
                     .executeUpdate();
         } catch (Exception exception) {
-            System.err.println("Error adding inventory: " + exception.getMessage());
+            System.out.println(exception.getMessage());
         }
     }
     public static List<InventoryItem> getAllInventory() {

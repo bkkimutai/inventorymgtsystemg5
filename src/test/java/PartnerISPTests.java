@@ -1,4 +1,5 @@
 import ke.co.safaricom.Models.PartnerISP;
+import ke.co.safaricom.dao.Sql2oPartnerISPDao;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.sql2o.Sql2o;
@@ -38,16 +39,16 @@ public class PartnerISPTests {
     @Test
     public void save_insertsObjectIntoDatabase_PartnerISP() {
         PartnerISP testISP = new PartnerISP("Broadband", "Nairobi East and Environs", "email@broadbanc.com");
-        testISP.save();
-        assertEquals(PartnerISP.all().get(0), testISP);
+        Sql2oPartnerISPDao.addPartnerISP(testISP);
+        assertEquals(Sql2oPartnerISPDao.getAllPartnerISP().get(0), testISP);
     }
     @Test
     public void all_returnsAllInstancesOfPartnerISPs_true() {
         PartnerISP firstISP = new PartnerISP("Broadband", "Nairobi East and Environs", "email@broadbanc.com");
-        firstISP.save();
+        Sql2oPartnerISPDao.addPartnerISP(firstISP);
         PartnerISP secondISP = new PartnerISP("Broadband", "Nairobi East and Environs", "email@broadbanc.com");
-        secondISP.save();
-        List<PartnerISP> IPS = PartnerISP.all();
+        Sql2oPartnerISPDao.addPartnerISP(firstISP);
+        List<PartnerISP> IPS = Sql2oPartnerISPDao.getAllPartnerISP();
 
         assertTrue(IPS.contains(firstISP));
         assertTrue(IPS.contains(secondISP));
@@ -55,16 +56,16 @@ public class PartnerISPTests {
     @Test
     public void save_assignsIdToObject() {
         PartnerISP firstISP = new PartnerISP("Broadband", "Nairobi East and Environs", "email@broadbanc.com");
-        firstISP.save();
-        List<PartnerISP> savedISP= PartnerISP.all();
+        Sql2oPartnerISPDao.addPartnerISP(firstISP);
+        List<PartnerISP> savedISP= Sql2oPartnerISPDao.getAllPartnerISP();
         assertEquals(1, savedISP.get(0).getPartnerId());
     }
     @Test
     public void find_returnsISPsWithSameId_secondISP() {
         PartnerISP firstISP = new PartnerISP("Broadband", "Nairobi East and Environs", "email@broadbanc.com");
-        firstISP.save();
+        Sql2oPartnerISPDao.addPartnerISP(firstISP);;
         PartnerISP secondISP = new PartnerISP("Broadband", "Nairobi East and Environs", "email@broadbanc.com");
-        secondISP.save();
-        assertEquals(PartnerISP.find(firstISP.getPartnerId()), firstISP);
+        Sql2oPartnerISPDao.addPartnerISP(secondISP);
+        assertEquals(Sql2oPartnerISPDao.findPartnerISPById(firstISP.getPartnerId()), firstISP);
     }
 }

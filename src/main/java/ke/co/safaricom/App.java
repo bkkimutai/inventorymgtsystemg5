@@ -3,6 +3,7 @@ import ke.co.safaricom.Models.InventoryItem;
 import ke.co.safaricom.Models.ItemWithPartnerISP;
 import ke.co.safaricom.Models.PartnerISP;
 import ke.co.safaricom.dao.Sql2oInventoryItemDao;
+import ke.co.safaricom.dao.Sql2oPartnerISPDao;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import java.util.HashMap;
@@ -25,7 +26,7 @@ public class App {
         //show new inventory form
         get("/inventory/new", (request, response) -> {
             Map<String, Object> payload = new HashMap<>();
-            List<PartnerISP> partners = PartnerISP.all();
+            List<PartnerISP> partners = Sql2oPartnerISPDao.getAllPartnerISP();
             payload.put("partnerisps", partners);
             return new ModelAndView(payload, "new-item.hbs");
         }, new HandlebarsTemplateEngine());
@@ -58,7 +59,7 @@ public class App {
             String partnerEmail = request.queryParams("partnerEmail");
             String description = request.queryParams("description");
             PartnerISP newISP = new PartnerISP(partnerName, partnerEmail, description);
-            newISP.save();
+            Sql2oPartnerISPDao.addPartnerISP(newISP);
             response.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());

@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/InventoryItemDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/PartnerISPDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/Sql2oInventoryItemDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/Sql2oPartnerISPDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/DB/DBManagement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/InventoryItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/InventoryItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/PartnerISP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/PartnerISP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/new-item.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/new-item.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/InventoryItemTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InventoryItemTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/InventoryItemDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/InventoryItemDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/PartnerISPDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/PartnerISPDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/Sql2oInventoryItemDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/Sql2oInventoryItemDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/Sql2oPartnerISPDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/Sql2oPartnerISPDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PartnerISPTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PartnerISPTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +297,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/PartnerISPTests.java</url>
-          <line>44</line>
+          <line>45</line>
           <properties class="PartnerISPTests" method="all_returnsAllInstancesOfPartnerISPs_true">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -311,7 +306,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/PartnerISPTests.java</url>
-          <line>55</line>
+          <line>56</line>
           <properties class="PartnerISPTests" method="save_assignsIdToObject">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

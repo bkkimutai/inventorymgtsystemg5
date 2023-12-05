@@ -54,46 +54,5 @@ public class PartnerISP {
                     this.getPartnerEmail().equals(newPartnerISP.getPartnerEmail());
         }
     }
-//    @Override
-//    public void save() {
-//        try(Connection con = DB.sql2o.open()) {
-//            String sql = "INSERT INTO partnerISPs (name, description) VALUES (:name, :description)";
-//            this.partnerId = (int) con.createQuery(sql, true)
-//                    .addParameter("name", this.name)
-//                    .addParameter("description", this.description)
-//                    .executeUpdate()
-//                    .getKey();
-//        }
-//    }
-    @Override
-    public void save() {
-        try (Connection con = DB.sql2o.beginTransaction()) {
-            String sql = "INSERT INTO partnerISPs (partnerName, partnerEmail, description) VALUES (:partnerName, :partnerEmail, :description)";
-            con.createQuery(sql)
-                    .addParameter("partnerName", this.partnerName)
-                    .addParameter("partnerEmail", this.partnerEmail)
-                    .addParameter("description", this.description)
-                    .executeUpdate();
-            String idQuery = "SELECT lastval()";
-            this.partnerId = con.createQuery(idQuery).executeScalar(Integer.class);
 
-            con.commit();
-        } catch (Exception exception) {
-            System.out.println(exception.getMessage());
-        }
-    }
-    public static List<PartnerISP> all() {
-        String sql = "SELECT * FROM partnerisps";
-        try(Connection con = DB.sql2o.open()) {
-            return con.createQuery(sql).executeAndFetch(PartnerISP.class);
-        }
-    }
-    public static PartnerISP find(int partnerId) {
-        try(Connection con = DB.sql2o.open()) {
-            String sql = "SELECT * FROM partnerisps where partnerId = :partnerId";
-            return con.createQuery(sql)
-                    .addParameter("partnerId", partnerId)
-                    .executeAndFetchFirst(PartnerISP.class);
-        }
-    }
 }

@@ -1,23 +1,31 @@
 package ke.co.safaricom.dao;
 
-import ke.co.safaricom.Models.InventoryItem;
+import ke.co.safaricom.Models.ItemWithPartnerISP;
 import ke.co.safaricom.Models.PartnerISP;
 
 import java.util.List;
 
 public interface PartnerISPDao {
     //create
-    void add (PartnerISP partnerISP);
+    static void addPartnerISP(PartnerISP newPartnerISP) {
+
+    }
 
     //read
-    List<PartnerISP> getAll();
-    PartnerISP findById(int id);
-    List<PartnerISP> getAllPartnersByInventoryItems(int partnerId);
+    static List<PartnerISP> getAllPartnerISP(){
+        return null;
+    };
+
+    static PartnerISP findPartnerISPById(int partnerId) {
+        return null;
+    }
+
+    List<ItemWithPartnerISP> getAllPartnersByInventoryItems(int partnerId);
 
     //update
-    void update(int partnerId, String partnerName, String partnerEmail, String description);
+    void updatePartnerISP(PartnerISP partnerISP);
 
     //delete
-    void deleteById(int partnerId);
+    void deletePartnerISPById(int partnerId);
 
 }
