@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment=" workspace.xml added to git ignore">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,20 +85,7 @@
       <recent name="ke.co.safaricom.Models" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="UserLogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ke.co.safaricom.Models.UserLogin" />
-      <module name="Inventory_Mgt_system.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ke.co.safaricom.Models.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Gradle.PartnerISPTests.all_returnsAllInstancesOfPartnerISPs_true">
     <configuration name="PartnerISPTests.all_returnsAllInstancesOfPartnerISPs_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -114,6 +100,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;PartnerISPTests.all_returnsAllInstancesOfPartnerISPs_true&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="PartnerISPTests.equals_returnsTrueIfNameAndEmailAreSame_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;PartnerISPTests.equals_returnsTrueIfNameAndEmailAreSame_true&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -198,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UserLogin" />
         <item itemvalue="Gradle.PartnerISPTests.all_returnsAllInstancesOfPartnerISPs_true" />
         <item itemvalue="Gradle.PartnerISPTests.find_returnsISPsWithSameId_secondISP" />
         <item itemvalue="Gradle.PartnerISPTests.save_assignsIdToObject" />
         <item itemvalue="Gradle.PartnerISPTests.save_insertsObjectIntoDatabase_PartnerISP" />
+        <item itemvalue="Gradle.PartnerISPTests.equals_returnsTrueIfNameAndEmailAreSame_true" />
       </list>
     </recent_temporary>
   </component>
@@ -215,65 +225,7 @@
       <option name="presentableId" value="Default" />
       <updated>1697563852016</updated>
     </task>
-    <task id="LOCAL-00001" summary="added handlebars for login, route to login and logic for login">
-      <option name="closed" value="true" />
-      <created>1701858115666</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1701858115666</updated>
-    </task>
-    <task id="LOCAL-00002" summary="amend on logic for valid user, rectified links for templates">
-      <option name="closed" value="true" />
-      <created>1701875739367</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1701875739367</updated>
-    </task>
-    <task id="LOCAL-00003" summary="added if error on  user login html">
-      <option name="closed" value="true" />
-      <created>1701875986550</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1701875986550</updated>
-    </task>
-    <task id="LOCAL-00004" summary="update to database connection">
-      <option name="closed" value="true" />
-      <created>1701883055229</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1701883055229</updated>
-    </task>
-    <task id="LOCAL-00005" summary=" again">
-      <option name="closed" value="true" />
-      <created>1701886721260</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1701886721260</updated>
-    </task>
-    <task id="LOCAL-00006" summary=" workspace.xml added to git ignore">
-      <option name="closed" value="true" />
-      <created>1701886972629</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1701886972629</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="added handlebars for login, route to login and logic for login" />
-    <MESSAGE value="amend on logic for valid user, rectified links for templates" />
-    <MESSAGE value="added if error on  user login html" />
-    <MESSAGE value="update to database connection" />
-    <MESSAGE value=" again" />
-    <MESSAGE value=" workspace.xml added to git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value=" workspace.xml added to git ignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
