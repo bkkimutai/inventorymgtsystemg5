@@ -5,6 +5,7 @@ import ke.co.safaricom.Models.PartnerISP;
 import ke.co.safaricom.dao.Sql2oInventoryItemDao;
 import ke.co.safaricom.dao.Sql2oPartnerISPDao;
 import spark.ModelAndView;
+import spark.Session;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import java.util.HashMap;
 import java.util.List;
@@ -16,11 +17,22 @@ public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
 
-        get("/", (req, res) -> {
-            Map<String, Object> payload = new HashMap<>();
-            List<ItemWithPartnerISP> InventoryWithISP = ItemWithPartnerISP.getAllInventoryWithISPs();
-            payload.put("InventoryWithISP", InventoryWithISP);
-            return new ModelAndView(payload, "layout.hbs");
+        // Define a route for the home page
+        get("/home", (request, response) -> {
+            Session session = request.session();
+            String username = session.attribute("username");
+
+            // Check if the user is authenticated
+            if (username != null) {
+                // Render the dashboard page
+                Map<String, Object> model = new HashMap<>();
+                model.put("username", username);
+                return new ModelAndView(model, "home.hbs");
+            } else {
+                // Redirect to login page if not authenticated
+                response.redirect("/login");
+                return null;
+            }
         }, new HandlebarsTemplateEngine());
 
         get("/inventorylist", (req, res) -> {
