@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="">
+    <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="cleaned code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/PartnerISP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/PartnerISP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/CreateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/CreateUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/UserLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +232,20 @@
       <option name="presentableId" value="Default" />
       <updated>1697563852016</updated>
     </task>
+    <task id="LOCAL-00001" summary="cleaned code">
+      <option name="closed" value="true" />
+      <created>1701891196635</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701891196636</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="cleaned code" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

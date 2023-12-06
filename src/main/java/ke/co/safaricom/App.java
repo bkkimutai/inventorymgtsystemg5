@@ -1,8 +1,5 @@
 package ke.co.safaricom;
-import ke.co.safaricom.Models.InventoryItem;
-import ke.co.safaricom.Models.ItemWithPartnerISP;
-import ke.co.safaricom.Models.PartnerISP;
-import ke.co.safaricom.Models.UserLogin;
+import ke.co.safaricom.Models.*;
 import ke.co.safaricom.dao.Sql2oInventoryItemDao;
 import ke.co.safaricom.dao.Sql2oPartnerISPDao;
 import spark.ModelAndView;
@@ -10,6 +7,7 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import ke.co.safaricom.dao.UserDao;
 
 import static spark.Spark.*;
 
@@ -45,6 +43,21 @@ public class App {
             return new ModelAndView(payload, "/createUser.hbs");
         }, new HandlebarsTemplateEngine());
 
+        post("/newUsers", (req, res)->{
+            Map<String, Object> payload = new HashMap<>();
+            String firstName = req.queryParams("firstName");
+            String lastName = req.queryParams("lastName");
+            String email = req.queryParams("email");
+            String company = req.queryParams("company");
+            String roles = req.queryParams("roles");
+            String phoneNumber = req.queryParams("phoneNumber");
+
+            UserDao userDao = new UserDao();
+            userDao.addUser(new CreateUser(firstName, lastName, email, company, roles, phoneNumber));
+
+            res.redirect("/");
+            return null;
+        }, new HandlebarsTemplateEngine());
 
 
         get("/", (req, res) -> {
