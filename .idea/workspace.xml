@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="update to database connection">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/UserLogin.java" afterDir="false" />
+    <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment=" again">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701883055229</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=" again">
+      <option name="closed" value="true" />
+      <created>1701886721260</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701886721260</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -255,7 +262,8 @@
     <MESSAGE value="amend on logic for valid user, rectified links for templates" />
     <MESSAGE value="added if error on  user login html" />
     <MESSAGE value="update to database connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="update to database connection" />
+    <MESSAGE value=" again" />
+    <option name="LAST_COMMIT_MESSAGE" value=" again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
