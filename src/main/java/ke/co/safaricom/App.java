@@ -2,6 +2,7 @@ package ke.co.safaricom;
 import ke.co.safaricom.Models.InventoryItem;
 import ke.co.safaricom.Models.ItemWithPartnerISP;
 import ke.co.safaricom.Models.PartnerISP;
+import ke.co.safaricom.Models.UserLogin;
 import ke.co.safaricom.dao.Sql2oInventoryItemDao;
 import ke.co.safaricom.dao.Sql2oPartnerISPDao;
 import spark.ModelAndView;
@@ -15,6 +16,36 @@ import static spark.Spark.*;
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
+
+
+        get("/login", (req,res)->{
+            Map<String, Object> payload = new HashMap<>();
+            return new ModelAndView(payload, "/userLogin.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
+
+        post("/UserLogin", (req, res) -> {
+                    Map<String, Object> payload = new HashMap<>();
+                    String email = req.queryParams("email");
+                    String password = req.queryParams("password");
+                    UserLogin newlogin = new UserLogin();
+                    if (newlogin.isValidUser(email, password)) {
+                        res.redirect("/");
+                    }else  {
+                // Invalid login, set error message
+                payload.put("error", "Invalid email or password. Please try again.");
+            }
+            return new ModelAndView(payload, "userLogin.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
+        get("/newUsers", (req,res)->{
+            Map<String, Object> payload = new HashMap<>();
+            return new ModelAndView(payload, "/createUser.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
 
         get("/", (req, res) -> {
             Map<String, Object> payload = new HashMap<>();
