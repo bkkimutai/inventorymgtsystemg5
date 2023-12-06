@@ -8,7 +8,6 @@ build/
 .idea/modules.xml
 .idea/workspace.xml
 .idea/jarRepositories.xml
-.idea/workspace.xml
 .idea/compiler.xml
 .idea/libraries/
 *.iws
