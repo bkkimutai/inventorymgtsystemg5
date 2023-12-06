@@ -19,7 +19,9 @@ public interface InventoryItemDao {
         return null;
     }
 
-    List<ItemWithPartnerISP> getAllInventoryByPartnerISP(int partnerId);
+    static List<InventoryItem> getAllInventoryByPartnerISP(int partnerId){
+        return null;
+    };
 
     //update
     void updateInventory(InventoryItem inventoryItem);

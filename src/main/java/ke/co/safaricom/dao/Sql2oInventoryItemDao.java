@@ -38,20 +38,17 @@ public class Sql2oInventoryItemDao implements InventoryItemDao{
                     .executeAndFetchFirst(InventoryItem.class);
         }
     }
-    public List<ItemWithPartnerISP> getAllInventoryByPartnerISP(int partnerId) {
+    public static List<InventoryItem> getAllInventoryByPartnerISP(int partnerId) {
         try (Connection connection = sql2o.open()) {
-            return connection.createQuery(
-                            "SELECT i.itemId, i.itemName, i.itemSerial, i.partnerId, p.partnerName " + // Added space here
-                                    "FROM inventory i " +
-                                    "INNER JOIN partnerisps p ON i.partnerId = p.partnerId " + // Added space here
-                                    "WHERE i.partnerId = :partnerId;")
+            return connection.createQuery("SELECT * FROM inventory WHERE partnerId = :partnerId")
                     .addParameter("partnerId", partnerId)
-                    .executeAndFetch(ItemWithPartnerISP.class);
+                    .executeAndFetch(InventoryItem.class);
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
-            return null;
+            return null; // Handle exceptions appropriately
         }
     }
+
     public void updateInventory(InventoryItem inventoryItem) {
         try (Connection connection = sql2o.open()) {
             connection.createQuery("UPDATE Inventory SET itemName = :itemName, itemSerial = :itemSerial, " +

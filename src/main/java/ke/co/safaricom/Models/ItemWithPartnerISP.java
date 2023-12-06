@@ -12,14 +12,16 @@ public class ItemWithPartnerISP {
     private String itemSerial;
     private int partnerId;
     private String partnerName;
+    private String partnerEmail;
 
-    public ItemWithPartnerISP(int itemId, String itemName, String itemSerial, int partnerId, String partnerName) {
-        this.itemId = itemId;
-        this.itemName = itemName;
-        this.itemSerial = itemSerial;
-        this.partnerId = partnerId;
-        this.partnerName = partnerName;
-    }
+//    public ItemWithPartnerISP(int itemId, String itemName, String itemSerial, int partnerId, String partnerName) {
+//        this.itemId = itemId;
+//        this.itemName = itemName;
+//        this.itemSerial = itemSerial;
+//        this.partnerId = partnerId;
+//        this.partnerName = partnerName;
+//    }
+
 
     public int getItemId() {
         return itemId;
@@ -50,6 +52,7 @@ public class ItemWithPartnerISP {
     }
 
     public void setPartnerId(int partnerId) {
+        this.partnerId = partnerId;
     }
 
     public String getPartnerName() {
@@ -60,10 +63,18 @@ public class ItemWithPartnerISP {
         this.partnerName = partnerName;
     }
 
+    public String getPartnerEmail() {
+        return partnerEmail;
+    }
+
+    public void setPartnerEmail(String partnerEmail) {
+        this.partnerEmail = partnerEmail;
+    }
+
     public static List<ItemWithPartnerISP> getAllInventoryWithISPs() {
         try (Connection connection = sql2o.open()) {
             return connection.createQuery(
-                            "SELECT i.itemId, i.itemName, i.itemSerial, i.partnerId, p.partnerName" +
+                            "SELECT i.itemId, i.itemName, i.itemSerial, i.partnerid, p.partnerName" +
                                     " FROM inventory i " +
                                     "INNER JOIN partnerisps p ON i.partnerId = p.partnerId;")
                     .executeAndFetch(ItemWithPartnerISP.class);

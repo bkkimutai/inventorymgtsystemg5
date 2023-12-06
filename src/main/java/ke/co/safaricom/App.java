@@ -20,6 +20,13 @@ public class App {
             Map<String, Object> payload = new HashMap<>();
             List<ItemWithPartnerISP> InventoryWithISP = ItemWithPartnerISP.getAllInventoryWithISPs();
             payload.put("InventoryWithISP", InventoryWithISP);
+            return new ModelAndView(payload, "layout.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/inventorylist", (req, res) -> {
+            Map<String, Object> payload = new HashMap<>();
+            List<ItemWithPartnerISP> InventoryWithISP = ItemWithPartnerISP.getAllInventoryWithISPs();
+            payload.put("InventoryWithISP", InventoryWithISP);
             return new ModelAndView(payload, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -62,6 +69,27 @@ public class App {
             Sql2oPartnerISPDao.addPartnerISP(newISP);
             response.redirect("/");
             return null;
+        }, new HandlebarsTemplateEngine());
+        //display a single Item from a ISP
+        get("/partnerisps/:partnerId/inventories/:itemId", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int itemId = Integer.parseInt(request.params("itemId"));
+            InventoryItem foundItem = Sql2oInventoryItemDao.findInventoryById(itemId);
+            model.put("item", foundItem);
+            int partnerId = Integer.parseInt(request.params("partnerId"));
+            PartnerISP foundPartner = Sql2oPartnerISPDao.findPartnerISPById(partnerId);
+            model.put("partnerISP", foundPartner);
+            return new ModelAndView(model, "inventory-details.hbs");
+        }, new HandlebarsTemplateEngine());
+        //Display partnerISP details
+        get("/partnerisps/:partnerId", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int IspToFindId = Integer.parseInt(request.params("partnerId"));
+            PartnerISP foundISP = Sql2oPartnerISPDao.findPartnerISPById(IspToFindId);
+            model.put("partnerISP", foundISP);
+            List<InventoryItem> allItemsByISP = Sql2oInventoryItemDao.getAllInventoryByPartnerISP(IspToFindId);
+            model.put("itemsbyisp", allItemsByISP);
+            return new ModelAndView(model, "partner-details.hbs");
         }, new HandlebarsTemplateEngine());
     }
 

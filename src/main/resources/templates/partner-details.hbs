@@ -1,0 +1,17 @@
+{{#partial "content"}}
+    <div class="container text-start mx-auto" style="max-width: 500px;">
+        <h1 class="text-center">{{partnerISP.partnerName}}</h1>
+        <p>List of assigned non-utilized inventory:</p>
+        <ul class="text-left" style="list-style-type:none;">
+            {{#each itemsbyisp}}
+                <li  class="text-start"  style="none">
+                    <p class="" ><a href="/partnerisps/{{partnerId}}/inventories/{{itemId}}"> <i class="fa fa-eye"></i> {{itemName}} </a></p>
+                </li>
+            {{/each}}
+        </ul>
+
+        <a class="btn btn-danger" href="/squads/{{squad.squadId}}/delete">Destroy The {{squad.squadName}} <i class="fa fa-exclamation-triangle"></i></a>
+    </div>
+{{/partial}}
+
+{{> "layout.hbs"}}
