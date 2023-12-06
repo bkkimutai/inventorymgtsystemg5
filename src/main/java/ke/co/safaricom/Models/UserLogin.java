@@ -24,8 +24,8 @@ public class UserLogin {
     public String getPassword(){return password;}
     public void setPassword(String password){this.password=password;}
 
-    public boolean isValidUser(String email, String password){
-        String query = "SELECT * FROM users WHERE email=? AND password=?";
+  /*  public boolean isValidUser(String email, String password){
+        String query = "SELECT * FROM  loginCredentials WHERE email=? AND password=?";
 
         try (Connection connection = DriverManager.getConnection(query);
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -47,7 +47,26 @@ public class UserLogin {
             e.printStackTrace();
             // Handle database connection or query execution error
             return false;
+        }*/
+        public boolean isValidUser(String email, String password) {
+            String query = "SELECT * FROM loginCredentials WHERE email=? AND password=?";
+
+            try (Connection connection = DriverManager.getConnection("jdbc:postgresql://root", "postres", "Moraa@2019");
+                 PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
+                preparedStatement.setString(1, email);
+                preparedStatement.setString(2, password);
+
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    // Check if the result set has any rows
+                    return resultSet.next(); // Returns true if a row is found, false otherwise
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+                // Handle database connection or query execution error
+                return false;
+            }
         }
+
     }
 
-}

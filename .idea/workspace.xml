@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="amend on logic for valid user, rectified links for templates">
+    <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="update to database connection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userLogin.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userLogin.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/UserLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/db.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,13 +232,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701875739367</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added if error on  user login html">
+      <option name="closed" value="true" />
+      <created>1701875986550</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701875986550</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added handlebars for login, route to login and logic for login" />
     <MESSAGE value="amend on logic for valid user, rectified links for templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="amend on logic for valid user, rectified links for templates" />
+    <MESSAGE value="added if error on  user login html" />
+    <MESSAGE value="update to database connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="update to database connection" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
