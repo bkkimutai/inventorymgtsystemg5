@@ -14,13 +14,13 @@ public class ItemWithPartnerISP {
     private String partnerName;
     private String partnerEmail;
 
-//    public ItemWithPartnerISP(int itemId, String itemName, String itemSerial, int partnerId, String partnerName) {
-//        this.itemId = itemId;
-//        this.itemName = itemName;
-//        this.itemSerial = itemSerial;
-//        this.partnerId = partnerId;
-//        this.partnerName = partnerName;
-//    }
+    public ItemWithPartnerISP(int itemId, String itemName, String itemSerial, int partnerId, String partnerName) {
+        this.itemId = itemId;
+        this.itemName = itemName;
+        this.itemSerial = itemSerial;
+        this.partnerId = partnerId;
+        this.partnerName = partnerName;
+    }
 
 
     public int getItemId() {

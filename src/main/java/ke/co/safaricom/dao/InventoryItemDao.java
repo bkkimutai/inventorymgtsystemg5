@@ -24,7 +24,7 @@ public interface InventoryItemDao {
     };
 
     //update
-    void updateInventory(InventoryItem inventoryItem);
+    static void updateInventory(InventoryItem inventoryItem){};
 
     //delete
     void deleteInventoryById(int itemId);

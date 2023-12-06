@@ -49,21 +49,21 @@ public class Sql2oInventoryItemDao implements InventoryItemDao{
         }
     }
 
-    public void updateInventory(InventoryItem inventoryItem) {
+    public static void updateInventory(InventoryItem updatedInventory) {
         try (Connection connection = sql2o.open()) {
-            connection.createQuery("UPDATE Inventory SET itemName = :itemName, itemSerial = :itemSerial, " +
-                            "itemManufacturer = :itemManufacturer, partnerId = :partnerId" +
-                            "WHERE itemId = :itemId")
-                    .addParameter("itemName", inventoryItem.getItemName())
-                    .addParameter("itemSerial", inventoryItem.getItemSerial())
-                    .addParameter("itemManufacturer", inventoryItem.getItemManufacturer())
-                    .addParameter("partnerId", inventoryItem.getPartnerId())
-                    .addParameter("itemId", inventoryItem.getItemId())
+            connection.createQuery("UPDATE inventory SET itemName = :itemName, itemSerial = :itemSerial, " +
+                            "itemManufacturer = :itemManufacturer, partnerId = :partnerId " +
+                            "WHERE itemSerial = :itemSerial")
+                    .addParameter("itemName", updatedInventory.getItemName())
+                    .addParameter("itemSerial", updatedInventory.getItemSerial())
+                    .addParameter("itemManufacturer", updatedInventory.getItemManufacturer())
+                    .addParameter("partnerId", updatedInventory.getPartnerId())
                     .executeUpdate();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
         }
     }
+
     public void deleteInventoryById(int itemId) {
         try (Connection connection = sql2o.open()) {
             connection.createQuery("DELETE FROM Inventory WHERE itemId = :itemId;")

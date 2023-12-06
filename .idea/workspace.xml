@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/inventory-details.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/partner-details.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/update-inventory.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/ItemWithPartnerISP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/ItemWithPartnerISP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/InventoryItemDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/InventoryItemDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/Sql2oInventoryItemDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/Sql2oInventoryItemDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/inventory-details.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/inventory-details.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/partner-details.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/partner-details.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

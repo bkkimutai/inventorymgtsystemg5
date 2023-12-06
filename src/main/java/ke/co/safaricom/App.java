@@ -91,6 +91,31 @@ public class App {
             model.put("itemsbyisp", allItemsByISP);
             return new ModelAndView(model, "partner-details.hbs");
         }, new HandlebarsTemplateEngine());
+
+        //Updating/reassigning Inventories
+        get("/partnerisps/:partnerId/inventories/:itemId/update-inventory", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int itemId = Integer.parseInt(req.params("itemId"));
+            InventoryItem foundItem = Sql2oInventoryItemDao.findInventoryById(itemId);
+            model.put("item", foundItem);
+            int partnerId = Integer.parseInt(req.params("partnerId"));
+            PartnerISP foundISP = Sql2oPartnerISPDao.findPartnerISPById(partnerId);
+            model.put("partnerISP", foundISP);
+            model.put("allPartnerISPs", Sql2oPartnerISPDao.getAllPartnerISP());
+            return new ModelAndView(model, "update-inventory.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/update-inventory", (req, res) -> {
+            Map<String, Object> payload = new HashMap<>();
+            String itemName = req.queryParams("itemName");
+            String itemSerial = req.queryParams("itemSerial");
+            String itemManufacturer = req.queryParams("itemManufacturer");
+            int partnerId = Integer.parseInt(req.queryParams("partnerId"));
+            InventoryItem updatedInventory = new InventoryItem(itemName, itemSerial,itemManufacturer, partnerId);
+            Sql2oInventoryItemDao.updateInventory(updatedInventory);
+            res.redirect("/inventorylist");
+            return null;
+        }, new HandlebarsTemplateEngine());
     }
 
 }
