@@ -1,0 +1,35 @@
+{{#partial "header"}}{{/partial}}
+{{#partial "content"}}
+
+    <div class="container text-center">
+        {{#if InventoryWithISP}}
+            <p><a class="btn btn-outline-primary" href="/inventory/new">+ Add New Inventory</a></p>
+            <div class="container text-start mx-auto">
+                <div class="row">
+                    {{#each InventoryWithISP}}
+                        <div class="col-md-4">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <ul style="list-style-type: disc; padding-left: 0;">
+                                        <li style="text-align: left;"><a href="partnerisps/{{partnerId}}/inventories/{{itemId}}"> {{itemName}}, </a>Serial No. {{itemSerial}}</li>
+                                        <li style="text-align: left;">Partner:<a href="/partnerisps/{{partnerId}}">{{partnerName}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    {{/each}}
+                </div>
+            </div>
+        {{else}}
+            <div class="container text-center border border-primary mt-5">
+                <p>Ooops!, Some rogue Thanos Agent Wiped all life forms on earth <i class="fa fa-heart-broken"></i></p>
+                <p>I think you were the agent though 🤔, create a superhero to prove that you're not the evil agent.</p>
+                <p><a class="btn btn-outline-primary" href="/heros/new">Add A New Hero <i class="fa fa-mask"></i></a></p>
+            </div>
+        {{/if}}
+    </div>
+
+{{/partial}}
+
+{{> "layout.hbs"}}
