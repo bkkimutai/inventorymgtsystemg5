@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment=" again">
+    <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment=" workspace.xml added to git ignore">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701886721260</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary=" workspace.xml added to git ignore">
+      <option name="closed" value="true" />
+      <created>1701886972629</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701886972629</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -263,7 +272,8 @@
     <MESSAGE value="added if error on  user login html" />
     <MESSAGE value="update to database connection" />
     <MESSAGE value=" again" />
-    <option name="LAST_COMMIT_MESSAGE" value=" again" />
+    <MESSAGE value=" workspace.xml added to git ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value=" workspace.xml added to git ignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
