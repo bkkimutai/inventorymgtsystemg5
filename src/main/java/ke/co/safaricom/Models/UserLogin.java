@@ -3,6 +3,12 @@ import java.sql.*;
 import ke.co.safaricom.DB.DB;
 import spark.Spark;
 
+import org.sql2o.Sql2o;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class UserLogin {
     private String email;
     private String password;
@@ -20,17 +26,28 @@ public class UserLogin {
 
     public boolean isValidUser(String email, String password){
         String query = "SELECT * FROM users WHERE email=? AND password=?";
-        return false;
-    }
-public static void main(String[] args){
-        Spark.post("/login",(req, res)->{
-            String email =req.queryParams("email");
-            String password =req.queryParams("password");
-            UserLogin loginService = new UserLogin();
-            if (loginService.isValidUser(email,password)){
-                res.redirect("/");
+
+        try (Connection connection = DriverManager.getConnection(query);
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, password);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                // Check if the result set has any rows
+                if (resultSet.next()) {
+                    // User exists, login is valid
+                    return true;
+                } else {
+                    // User does not exist, login failed
+                    return false;
+                }
             }
-            return null;
-        });
-}
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Handle database connection or query execution error
+            return false;
+        }
+    }
+
 }

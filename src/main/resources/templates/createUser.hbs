@@ -1,0 +1,45 @@
+{{#partial "content"}}
+    <div class="container">
+        <h2> Create new User Form</h2>
+        <div class="container">
+            <form action="/newUsers" method="post">
+                <div>
+                    <label for="firstname">First Name:</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="Enter first name"name="firstname" required>
+                </div>
+
+                <div>
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Enter lastname" name="lastname" required>
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email"  placeholder="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="company">Company:</label>
+                    <input type="text" class="form-control" id="company" placeholder="Enter company" name="company" required>
+                </div>
+
+                <div>
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="text" class="form-control" id="phoneNumber" placeholder="Enter phonenumber" name="phoneNumber" required>
+                </div>
+                <div>
+                    <label for="roles">Role</label>
+                    <select id="roles" name="roles" required>
+                        <option value="admin">Admin</option>
+                        <option value="Partner">Partner</option>
+                        <option value="staff">Safaricom staff</option>
+                    </select><br>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Add new user</button>
+            </form>
+
+        </div>
+    </div>
+{{/partial}}
+{{> "layout.hbs"}}
