@@ -16,6 +16,13 @@ public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
 
+
+        get("/login", (req,res)->{
+            Map<String, Object> payload = new HashMap<>();
+            return new ModelAndView(payload, "/userLogin.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
         get("/", (req, res) -> {
             Map<String, Object> payload = new HashMap<>();
             List<ItemWithPartnerISP> InventoryWithISP = ItemWithPartnerISP.getAllInventoryWithISPs();

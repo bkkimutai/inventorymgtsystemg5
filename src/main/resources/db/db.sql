@@ -14,3 +14,9 @@ CREATE TABLE IF NOT EXISTS partnerisps (
    partnerEmail VARCHAR,
    description VARCHAR
 );
+
+CREATE TABLE IF NOT EXISTS users (
+   userId int PRIMARY KEY auto_increment,
+   userEmail VARCHAR,
+   userPassword VARCHAR,
+);
