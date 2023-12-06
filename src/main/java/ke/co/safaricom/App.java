@@ -54,8 +54,6 @@ public class App {
         //display form to create a new partner ISP
         get("/partnerisps/new", (request, response) -> {
             Map<String, Object> payload = new HashMap<>();
-//            List<Squad> squads = heroSquadDao.getAllSquads();
-//            payload.put("squads", squads);
             return new ModelAndView(payload, "new-partnerisp.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -114,6 +112,24 @@ public class App {
             InventoryItem updatedInventory = new InventoryItem(itemName, itemSerial,itemManufacturer, partnerId);
             Sql2oInventoryItemDao.updateInventory(updatedInventory);
             res.redirect("/inventorylist");
+            return null;
+        }, new HandlebarsTemplateEngine());
+        get("/partnerisps/:partnerId/update-ISP", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int partnerId = Integer.parseInt(request.params("partnerId"));
+            PartnerISP foundISP = Sql2oPartnerISPDao.findPartnerISPById(partnerId);
+            model.put("partnerISP", foundISP);
+            return new ModelAndView(model, "update-ISP.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/update-ISP", (req, res) -> {
+            Map<String, Object> payload = new HashMap<>();
+            String partnerName = req.queryParams("partnerName");
+            String partnerEmail = req.queryParams("partnerEmail");
+            String description = req.queryParams("description");
+            PartnerISP updatedISP = new PartnerISP(partnerName, partnerEmail,description);
+            Sql2oPartnerISPDao.updatePartnerISP(updatedISP);
+            res.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());
     }

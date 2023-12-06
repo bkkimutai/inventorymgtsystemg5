@@ -1,6 +1,8 @@
 {{#partial "content"}}
     <div class="container text-start mx-auto" style="max-width: 500px;">
         <h1 class="text-center">{{partnerISP.partnerName}}</h1>
+        <p class="text-center"> Email: {{partnerISP.partnerEmail}}</p>
+        <p class="text-center">Address: {{partnerISP.description}}</p>
         <p>List of assigned non-utilized inventory:</p>
         <ul class="text-left" style="list-style-type:none;">
             {{#each itemsbyisp}}
