@@ -4,7 +4,7 @@ import ke.co.safaricom.DB.DB;
 import ke.co.safaricom.DB.DBManagement;
 import org.sql2o.Connection;
 
-public class PartnerISP implements DBManagement {
+public class   PartnerISP implements DBManagement {
     private String name;
     private String description;
     private int partnerId;
