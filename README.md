@@ -1,3 +1,4 @@
+
 ## Project Name
  - Inventory Management System
 
@@ -28,4 +29,7 @@
 ## License
  - MIT License
  - Copyright (c) 2023 Benjamin Kimutai Lewis Maina Simon Muiruri Bernard Amaitsa
+
+=======
+# inventorymgtsystemg5
 

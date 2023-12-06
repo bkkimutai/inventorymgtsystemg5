@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment=" again">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="New branch">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,14 +44,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="README.md" />
-
+        <entry key="$PROJECT_DIR$" value="capstone_shell" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -71,9 +67,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
-
-    "git-widget-placeholder": "Creating-Readme",
-
+    "git-widget-placeholder": "Inventory-App-Initial",
     "last_opened_file_path": "C:/Users/Benjamin Kimutai/Documents/moringa_school_projects/CapstoneProject",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -92,19 +86,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="UserLogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ke.co.safaricom.Models.UserLogin" />
-      <module name="Inventory_Mgt_system.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ke.co.safaricom.Models.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PartnerISPTests.all_returnsAllInstancesOfPartnerISPs_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -119,6 +100,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;PartnerISPTests.all_returnsAllInstancesOfPartnerISPs_true&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="PartnerISPTests.equals_returnsTrueIfNameAndEmailAreSame_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;PartnerISPTests.equals_returnsTrueIfNameAndEmailAreSame_true&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -203,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UserLogin" />
         <item itemvalue="Gradle.PartnerISPTests.all_returnsAllInstancesOfPartnerISPs_true" />
         <item itemvalue="Gradle.PartnerISPTests.find_returnsISPsWithSameId_secondISP" />
         <item itemvalue="Gradle.PartnerISPTests.save_assignsIdToObject" />
         <item itemvalue="Gradle.PartnerISPTests.save_insertsObjectIntoDatabase_PartnerISP" />
+        <item itemvalue="Gradle.PartnerISPTests.equals_returnsTrueIfNameAndEmailAreSame_true" />
       </list>
     </recent_temporary>
   </component>
@@ -220,31 +225,36 @@
       <option name="presentableId" value="Default" />
       <updated>1697563852016</updated>
     </task>
-
-    <task id="LOCAL-00001" summary="adding readme file">
+    <task id="LOCAL-00001" summary="New branch">
       <option name="closed" value="true" />
-      <created>1701885208998</created>
+      <created>1701847286663</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1701885208998</updated>
+      <updated>1701847286664</updated>
     </task>
-    <task id="LOCAL-00002" summary="adding idea work space to gitignore">
+    <task id="LOCAL-00002" summary="New branch">
       <option name="closed" value="true" />
-      <created>1701886315645</created>
+      <created>1701847380214</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1701886315645</updated>
+      <updated>1701847380214</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="New branch">
+      <option name="closed" value="true" />
+      <created>1701887218044</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701887218044</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adding readme file" />
-    <MESSAGE value="adding idea work space to gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding idea work space to gitignore" />
-
+    <MESSAGE value="New branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="New branch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
