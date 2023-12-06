@@ -1,0 +1,26 @@
+{{#partial "content"}}
+
+    <div class="container text-start mx-auto">
+
+        <div class="card mb-3 mx-auto" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <p class="card-text">
+                        <p>{{item.itemName}}'s P1 Info</p>
+                        <p>{{item.itemName}}'s currently assigned to <a href="/partnerisps/{{partnerISP.partnerId}}">{{partnerISP.partnerName}}</a> </p>
+                        <p>Serial: {{item.itemSerial}}</p>
+                        <p>Vendor: {{item.itemManufacturer}}</p>
+                        <p class="card-footer">
+                        <p><a class="btn btn-primary justify-content-left" href="/partnerisps/{{item.partnerId}}/inventories/{{item.itemId}}/update-inventory">Re-assign {{hero.heroName}}</a> </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{{/partial}}
+
+{{> "layout.hbs"}}

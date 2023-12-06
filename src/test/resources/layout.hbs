@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}}Hero Squad{{/block}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel='stylesheet' href='/css/app.css'>
+</head>
+<body>
+<!--begin main template-->
+<ul class="nav nav-tabs">
+    <li role="presentation" class="nav-link"><a href="/">Home</a></li>
+    <li role="presentation" class="nav-link"><a href="/heros/new">Recruit a New Hero</a></li>
+    <li role="presentation" class="nav-link"><a href="/squads/new">Create a New Squad</a></li>
+    <li class="presentation"><a class="nav-link" href="/allherossquads/all">All Heroes & Squads</a></li>
+</ul>
+<div class="container">
+    <div class="page-header">
+        <div class="container-fluid">
+            <img src="/images/caspar1.jpg" class="img-fluid" alt="Hero Image" style="max-height: 150px;"  width="100%">
+        </div>
+        <h1 class="text-center">Hero Squads</h1>
+        <h5 class="text-center">The Superhero Registry</h5>
+    </div>
+
+
+    <div class="container">
+        <!--begin main template-->
+        {{#block "content"}}
+        {{/block}}
+    </div>
+</div>
+<!--end main template-->
+{{#block "footer"}}
+    <footer>
+        <br>
+        <br>
+    </footer>
+    </body>
+    </html>
+{{/block}}

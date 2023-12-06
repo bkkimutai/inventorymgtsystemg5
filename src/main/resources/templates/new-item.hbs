@@ -1,0 +1,41 @@
+{{#partial "content"}}
+    <h2 class="text-center">Add a new Inventory Item</h2>
+
+    {{#if partnerisps}}
+        <div class="container">
+            <form action="/inventories" method="post">
+                <div class="form-group">
+                    <label for="heroName">Inventory Name:</label>
+                    <input type="text" class="form-control" id="itemName" aria-describedby="emailHelp" placeholder="Enter Inventory name" name="itemName" required >
+                </div>
+                <div class="form-group">
+                    <label for="heroPower">Serial Number:</label>
+                    <input type="text" class="form-control" id="itemSerial" aria-describedby="emailHelp" placeholder="Enter itemSerial" name="itemSerial" required>
+                </div>
+                <div class="form-group">
+                    <label for="heroAge">vendor (Manufacturer):</label>
+                    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter inventory vendor!" name="itemManufacturer" id="itemManufacturer" required>
+                </div>
+                <div class="form-group">
+                    <label for="partnerId">Assign Inventory to:</label>
+                    <select id="partnerId" name="partnerId" required>
+                        {{#each partnerisps}}
+                            <option value="{{partnerId}}">{{partnerName}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+
+                <p class="text-end"><button class="btn btn-primary text-end" type="submit">Activate your Inventory <i class="fa fa-save"></i></button></p>
+
+            </form>
+
+        </div>
+        <div>
+            <p class="text-center">Don't see correct partner ISP?  <a class="btn btn-outline-primary" href="/partnerisps/new"> Create a new one here!</a> </p>
+        </div>
+
+    {{else}}
+        <h3 class="text-center text-info"><i class="fas fa-info"></i>  You'll need to create partner ISP before you add an Inventory <br><br> <a class="btn btn-outline-primary" href="/partnerisps/new">Create A New Partner ISP here </a> </h3>
+    {{/if}}
+{{/partial}}
+{{> "layout.hbs"}}
