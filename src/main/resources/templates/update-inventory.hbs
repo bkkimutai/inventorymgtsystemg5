@@ -1,39 +1,42 @@
 {{#partial "content"}}
 
-    <h2 class="text-center">Updating {{item.itemName}} Details</h2>
-
     <div class="container">
-        <form action="/update-inventory" method="post">
-            <div class="form-group">
-                <label for="itemName">Inventory Name:</label>
-                <input type="text" class="form-control" id="itemName" aria-describedby="emailHelp" value="{{item.itemName}}" name="itemName" readonly >
-            </div>
-            <div class="form-group">
-                <label for="itemSerial">Serial No:</label>
-                <input type="text" class="form-control" aria-describedby="emailHelp" value="{{item.itemSerial}}" name="itemSerial" id="itemSerial" readonly>
-            </div>
-            <div class="form-group">
-                <label for="itemManufacturer">Vendor:</label>
-                <input type="text" class="form-control" id="itemManufacturer" aria-describedby="emailHelp" value="{{item.itemManufacturer}}" name="itemManufacturer" readonly>
-            </div>
-            <div>
-                Current Owner: <a href="/partnerisps/{{partnerISP.partnerId}}"> {{partnerISP.partnerName}}</a>
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="partnerId" >Reassign Inventory:</label>
-                <select id="partnerId" name="partnerId"  required>
-                    {{#each allPartnerISPs}}
-                        <option value="{{partnerId}}">{{partnerName}}</option>
-                    {{/each}}
-                </select>
-            </div>
+        <h2 class="text-center">Updating {{item.itemName}} Details</h2>
 
-            <p class="text-end"><button class="btn btn-primary text-end" type="submit">Update {{hero.heroName}} <i class="fa fa-save"></i></button></p>
+        <div class="container">
+            <form action="/update-inventory" method="post">
+                <div class="form-group">
+                    <label for="itemName">Inventory Name:</label>
+                    <input type="text" class="form-control" id="itemName" aria-describedby="emailHelp" value="{{item.itemName}}" name="itemName" readonly >
+                </div>
+                <div class="form-group">
+                    <label for="itemSerial">Serial No:</label>
+                    <input type="text" class="form-control" aria-describedby="emailHelp" value="{{item.itemSerial}}" name="itemSerial" id="itemSerial" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="itemManufacturer">Vendor:</label>
+                    <input type="text" class="form-control" id="itemManufacturer" aria-describedby="emailHelp" value="{{item.itemManufacturer}}" name="itemManufacturer" readonly>
+                </div>
+                <div>
+                    Current Owner: <a href="/partnerisps/{{partnerISP.partnerId}}"> {{partnerISP.partnerName}}</a>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="partnerId" >Reassign Inventory:</label>
+                    <select id="partnerId" name="partnerId"  required>
+                        {{#each allPartnerISPs}}
+                            <option value="{{partnerId}}">{{partnerName}}</option>
+                        {{/each}}
+                    </select>
+                </div>
 
-        </form>
+                <p class="text-end"><button class="btn btn-primary text-end" type="submit">Update {{hero.heroName}} <i class="fa fa-save"></i></button></p>
 
+            </form>
+
+        </div>
     </div>
+
 {{/partial}}
 
 {{> "layout.hbs"}}

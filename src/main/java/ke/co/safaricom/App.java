@@ -69,7 +69,7 @@ public class App {
             Map<String, Object> payload = new HashMap<>();
             List<ItemWithPartnerISP> InventoryWithISP = ItemWithPartnerISP.getAllInventoryWithISPs();
             payload.put("InventoryWithISP", InventoryWithISP);
-            return new ModelAndView(payload, "layout.hbs");
+            return new ModelAndView(payload, "home.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/inventorylist", (req, res) -> {
