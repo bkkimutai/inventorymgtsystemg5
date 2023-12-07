@@ -51,13 +51,16 @@ public class App {
             String company = req.queryParams("company");
             String roles = req.queryParams("roles");
             String phoneNumber = req.queryParams("phoneNumber");
-
             UserDao userDao = new UserDao();
-            userDao.addUser(new CreateUser(firstName, lastName, email, company, roles, phoneNumber));
-
-            res.redirect("/");
-            return null;
+            CreateUser newUser = new CreateUser(firstName, lastName, email, company, roles, phoneNumber);
+            if (userDao.addUser(newUser)){
+                res.redirect("/newUsers.hbs");
+            } else {
+                payload.put("error", "Failed to create new user.");
+            }
+            return new ModelAndView(payload, "createUser.hbs");
         }, new HandlebarsTemplateEngine());
+
 
 
         get("/home", (req, res) -> {
@@ -91,7 +94,7 @@ public class App {
             int partnerId = Integer.parseInt(request.queryParams("partnerId"));
             InventoryItem newInventory = new InventoryItem(itemName, itemSerial, itemManufacturer, partnerId);
             Sql2oInventoryItemDao.addInventory(newInventory);
-            response.redirect("/");
+            response.redirect("/home");
             return null;
         }, new HandlebarsTemplateEngine());
 
@@ -109,7 +112,7 @@ public class App {
             String description = request.queryParams("description");
             PartnerISP newISP = new PartnerISP(partnerName, partnerEmail, description);
             Sql2oPartnerISPDao.addPartnerISP(newISP);
-            response.redirect("/");
+            response.redirect("/home");
             return null;
         }, new HandlebarsTemplateEngine());
         //display a single Item from a ISP
