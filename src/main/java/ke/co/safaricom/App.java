@@ -45,6 +45,10 @@ public class App {
             return new ModelAndView(payload, "/createUser.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/reports", (req,res)->{
+            Map<String, Object> payload = new HashMap<>();
+            return new ModelAndView(payload, "/reports.hbs");
+        }, new HandlebarsTemplateEngine());
 
 
         get("/home", (req, res) -> {
