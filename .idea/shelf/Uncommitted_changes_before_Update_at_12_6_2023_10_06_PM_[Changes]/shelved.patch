@@ -1,0 +1,588 @@
+Index: src/main/resources/templates/layout.hbs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title>{{#block \"title\"}}SAFDBB INVENTORY PORTAL{{/block}}</title>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>\r\n    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css\" rel=\"stylesheet\">\r\n    <link rel=\"stylesheet\" href=\"/css/main.css\">\r\n    <link rel='stylesheet' href='/css/app.css'>\r\n</head>\r\n<body>\r\n<!--begin main template-->\r\n<ul class=\"nav nav-tabs\">\r\n    <li role=\"presentation\" class=\"nav-link\"><a href=\"/\">Home</a></li>\r\n    <li role=\"presentation\" class=\"nav-link\"><a href=\"/inventory/new\">Register New Inventory</a></li>\r\n    <li role=\"presentation\" class=\"nav-link\"><a href=\"/partnerisps/new\">Create a New Partner ISP</a></li>\r\n    <li role=\"presentation\" class=\"nav-link\"><a href=\"/inventorylist\">My Inventory</a></li>\r\n</ul>\r\n<div class=\"container\">\r\n    <div class=\"page-header\">\r\n        <div class=\"container-fluid\">\r\n            <img src=\"/images/caspar1.jpg\" class=\"img-fluid\" alt=\"Inventorymgt logo\" style=\"max-height: 150px;\"  width=\"100%\">\r\n        </div>\r\n        <h1 class=\"text-center\">Inventory management Portal</h1>\r\n        <h5 class=\"text-center\">The Inventory Registry</h5>\r\n        <div class=\"text-center\">\r\n            <p><a class=\"btn btn-outline-primary\" href=\"/\"><i class=\"bi bi-arrow-left\"></i> Back Home</a></p>\r\n        </div>\r\n    </div>\r\n    <div class=\"container\">\r\n        <!--begin main template-->\r\n        {{#block \"content\"}}\r\n        {{/block}}\r\n    </div>\r\n</div>\r\n<!--end main template-->\r\n{{#block \"footer\"}}\r\n    <footer>\r\n        <div>\r\n            <p class=\"text-center\"><a class=\"btn btn-outline-primary\" href=\"/\"><i class=\"bi bi-arrow-left\"></i> Back Home</a></p>\r\n        </div>\r\n    </footer>\r\n    </body>\r\n    </html>\r\n{{/block}}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/layout.hbs b/src/main/resources/templates/layout.hbs
+--- a/src/main/resources/templates/layout.hbs	(revision 24ba2dbb9c2cde2b95bf8c101c72d41fbefe0c45)
++++ b/src/main/resources/templates/layout.hbs	(date 1701889107182)
+@@ -17,6 +17,7 @@
+     <li role="presentation" class="nav-link"><a href="/inventory/new">Register New Inventory</a></li>
+     <li role="presentation" class="nav-link"><a href="/partnerisps/new">Create a New Partner ISP</a></li>
+     <li role="presentation" class="nav-link"><a href="/inventorylist">My Inventory</a></li>
++    <li role="presentation" class="nav-link"><a href="/newUsers">Create New user</a></li>
+ </ul>
+ <div class="container">
+     <div class="page-header">
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.gradle\r\nbuild/\r\n!gradle/wrapper/gradle-wrapper.jar\r\n!**/src/main/**/build/\r\n!**/src/test/**/build/\r\n\r\n### IntelliJ IDEA ###\r\n.idea/modules.xml\r\n.idea/workspace.xml\r\n.idea/jarRepositories.xml\r\n.idea/compiler.xml\r\n.idea/libraries/\r\n*.iws\r\n*.iml\r\n*.ipr\r\nout/\r\n!**/src/main/**/out/\r\n!**/src/test/**/out/\r\n\r\n### Eclipse ###\r\n.apt_generated\r\n.classpath\r\n.factorypath\r\n.project\r\n.settings\r\n.springBeans\r\n.sts4-cache\r\nbin/\r\n!**/src/main/**/bin/\r\n!**/src/test/**/bin/\r\n\r\n### NetBeans ###\r\n/nbproject/private/\r\n/nbbuild/\r\n/dist/\r\n/nbdist/\r\n/.nb-gradle/\r\n\r\n### VS Code ###\r\n.vscode/\r\n\r\n### Mac OS ###\r\n.DS_Store
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision 24ba2dbb9c2cde2b95bf8c101c72d41fbefe0c45)
++++ b/.gitignore	(date 1701889107176)
+@@ -8,6 +8,7 @@
+ .idea/modules.xml
+ .idea/workspace.xml
+ .idea/jarRepositories.xml
++.idea/workspace.xml
+ .idea/compiler.xml
+ .idea/libraries/
+ *.iws
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'java'\r\n}\r\n\r\ngroup = 'ke.co.safaricom'\r\nversion = '1.0-SNAPSHOT'\r\n\r\nrepositories {\r\n    mavenCentral()\r\n}\r\n\r\ndependencies {\r\n    testImplementation platform('org.junit:junit-bom:5.9.1')\r\n    testImplementation 'org.junit.jupiter:junit-jupiter'\r\n    implementation 'com.sparkjava:spark-core:2.9.4'\r\n    implementation 'com.sparkjava:spark-template-handlebars:2.7.1'\r\n    testImplementation 'org.slf4j:slf4j-simple:2.0.9'\r\n    implementation 'postgresql:postgresql:9.1-901-1.jdbc4'\r\n    implementation 'org.postgresql:postgresql:42.6.0'\r\n    implementation 'org.sql2o:sql2o:1.6.0'\r\n    implementation 'org.sql2o.extensions:sql2o-postgres:1.6.0'\r\n}\r\n\r\ntest {\r\n    useJUnitPlatform()\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	(revision 24ba2dbb9c2cde2b95bf8c101c72d41fbefe0c45)
++++ b/build.gradle	(date 1701889107178)
+@@ -15,8 +15,10 @@
+     implementation 'com.sparkjava:spark-core:2.9.4'
+     implementation 'com.sparkjava:spark-template-handlebars:2.7.1'
+     testImplementation 'org.slf4j:slf4j-simple:2.0.9'
+-    implementation 'postgresql:postgresql:9.1-901-1.jdbc4'
++    //implementation 'postgresql:postgresql:9.1-901-1.jdbc4'
+     implementation 'org.postgresql:postgresql:42.6.0'
++    implementation 'org.postgresql:postgresql:42.2.27.jre7'
++    implementation group: 'org.mindrot', name: 'jbcrypt', version: '0.4'
+     implementation 'org.sql2o:sql2o:1.6.0'
+     implementation 'org.sql2o.extensions:sql2o-postgres:1.6.0'
+ }
+Index: src/main/java/ke/co/safaricom/App.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ke.co.safaricom;\r\nimport ke.co.safaricom.Models.InventoryItem;\r\nimport ke.co.safaricom.Models.ItemWithPartnerISP;\r\nimport ke.co.safaricom.Models.PartnerISP;\r\nimport ke.co.safaricom.dao.Sql2oInventoryItemDao;\r\nimport ke.co.safaricom.dao.Sql2oPartnerISPDao;\r\nimport spark.ModelAndView;\r\nimport spark.template.handlebars.HandlebarsTemplateEngine;\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\nimport java.util.Map;\r\n\r\nimport static spark.Spark.*;\r\n\r\npublic class App {\r\n    public static void main(String[] args) {\r\n        staticFileLocation(\"/public\");\r\n\r\n        get(\"/\", (req, res) -> {\r\n            Map<String, Object> payload = new HashMap<>();\r\n            List<ItemWithPartnerISP> InventoryWithISP = ItemWithPartnerISP.getAllInventoryWithISPs();\r\n            payload.put(\"InventoryWithISP\", InventoryWithISP);\r\n            return new ModelAndView(payload, \"layout.hbs\");\r\n        }, new HandlebarsTemplateEngine());\r\n\r\n        get(\"/inventorylist\", (req, res) -> {\r\n            Map<String, Object> payload = new HashMap<>();\r\n            List<ItemWithPartnerISP> InventoryWithISP = ItemWithPartnerISP.getAllInventoryWithISPs();\r\n            payload.put(\"InventoryWithISP\", InventoryWithISP);\r\n            return new ModelAndView(payload, \"index.hbs\");\r\n        }, new HandlebarsTemplateEngine());\r\n\r\n        //show new inventory form\r\n        get(\"/inventory/new\", (request, response) -> {\r\n            Map<String, Object> payload = new HashMap<>();\r\n            List<PartnerISP> partners = Sql2oPartnerISPDao.getAllPartnerISP();\r\n            payload.put(\"partnerisps\", partners);\r\n            return new ModelAndView(payload, \"new-item.hbs\");\r\n        }, new HandlebarsTemplateEngine());\r\n\r\n        //Post new Inventory into DB\r\n        post(\"/inventories\", (request, response) -> {\r\n            Map<String, Object> payload = new HashMap<>();\r\n            String itemName = request.queryParams(\"itemName\");\r\n            String itemSerial = request.queryParams(\"itemSerial\");\r\n            String itemManufacturer = request.queryParams(\"itemManufacturer\");\r\n            int partnerId = Integer.parseInt(request.queryParams(\"partnerId\"));\r\n            InventoryItem newInventory = new InventoryItem(itemName, itemSerial, itemManufacturer, partnerId);\r\n            Sql2oInventoryItemDao.addInventory(newInventory);\r\n            response.redirect(\"/\");\r\n            return null;\r\n        }, new HandlebarsTemplateEngine());\r\n\r\n        //display form to create a new partner ISP\r\n        get(\"/partnerisps/new\", (request, response) -> {\r\n            Map<String, Object> payload = new HashMap<>();\r\n            return new ModelAndView(payload, \"new-partnerisp.hbs\");\r\n        }, new HandlebarsTemplateEngine());\r\n\r\n        //process new Partner\r\n        post(\"/partnerisps\", (request, response) -> {\r\n            Map<String, Object> model = new HashMap<>();\r\n            String partnerName = request.queryParams(\"partnerName\");\r\n            String partnerEmail = request.queryParams(\"partnerEmail\");\r\n            String description = request.queryParams(\"description\");\r\n            PartnerISP newISP = new PartnerISP(partnerName, partnerEmail, description);\r\n            Sql2oPartnerISPDao.addPartnerISP(newISP);\r\n            response.redirect(\"/\");\r\n            return null;\r\n        }, new HandlebarsTemplateEngine());\r\n        //display a single Item from a ISP\r\n        get(\"/partnerisps/:partnerId/inventories/:itemId\", (request, response) -> {\r\n            Map<String, Object> model = new HashMap<>();\r\n            int itemId = Integer.parseInt(request.params(\"itemId\"));\r\n            InventoryItem foundItem = Sql2oInventoryItemDao.findInventoryById(itemId);\r\n            model.put(\"item\", foundItem);\r\n            int partnerId = Integer.parseInt(request.params(\"partnerId\"));\r\n            PartnerISP foundPartner = Sql2oPartnerISPDao.findPartnerISPById(partnerId);\r\n            model.put(\"partnerISP\", foundPartner);\r\n            return new ModelAndView(model, \"inventory-details.hbs\");\r\n        }, new HandlebarsTemplateEngine());\r\n        //Display partnerISP details\r\n        get(\"/partnerisps/:partnerId\", (request, response) -> {\r\n            Map<String, Object> model = new HashMap<>();\r\n            int IspToFindId = Integer.parseInt(request.params(\"partnerId\"));\r\n            PartnerISP foundISP = Sql2oPartnerISPDao.findPartnerISPById(IspToFindId);\r\n            model.put(\"partnerISP\", foundISP);\r\n            List<InventoryItem> allItemsByISP = Sql2oInventoryItemDao.getAllInventoryByPartnerISP(IspToFindId);\r\n            model.put(\"itemsbyisp\", allItemsByISP);\r\n            return new ModelAndView(model, \"partner-details.hbs\");\r\n        }, new HandlebarsTemplateEngine());\r\n\r\n        //Updating/reassigning Inventories\r\n        get(\"/partnerisps/:partnerId/inventories/:itemId/update-inventory\", (req, res) -> {\r\n            Map<String, Object> model = new HashMap<>();\r\n            int itemId = Integer.parseInt(req.params(\"itemId\"));\r\n            InventoryItem foundItem = Sql2oInventoryItemDao.findInventoryById(itemId);\r\n            model.put(\"item\", foundItem);\r\n            int partnerId = Integer.parseInt(req.params(\"partnerId\"));\r\n            PartnerISP foundISP = Sql2oPartnerISPDao.findPartnerISPById(partnerId);\r\n            model.put(\"partnerISP\", foundISP);\r\n            model.put(\"allPartnerISPs\", Sql2oPartnerISPDao.getAllPartnerISP());\r\n            return new ModelAndView(model, \"update-inventory.hbs\");\r\n        }, new HandlebarsTemplateEngine());\r\n\r\n        post(\"/update-inventory\", (req, res) -> {\r\n            Map<String, Object> payload = new HashMap<>();\r\n            String itemName = req.queryParams(\"itemName\");\r\n            String itemSerial = req.queryParams(\"itemSerial\");\r\n            String itemManufacturer = req.queryParams(\"itemManufacturer\");\r\n            int partnerId = Integer.parseInt(req.queryParams(\"partnerId\"));\r\n            InventoryItem updatedInventory = new InventoryItem(itemName, itemSerial,itemManufacturer, partnerId);\r\n            Sql2oInventoryItemDao.updateInventory(updatedInventory);\r\n            res.redirect(\"/inventorylist\");\r\n            return null;\r\n        }, new HandlebarsTemplateEngine());\r\n        get(\"/partnerisps/:partnerId/update-ISP\", (request, response) -> {\r\n            Map<String, Object> model = new HashMap<>();\r\n            int partnerId = Integer.parseInt(request.params(\"partnerId\"));\r\n            PartnerISP foundISP = Sql2oPartnerISPDao.findPartnerISPById(partnerId);\r\n            model.put(\"partnerISP\", foundISP);\r\n            return new ModelAndView(model, \"update-ISP.hbs\");\r\n        }, new HandlebarsTemplateEngine());\r\n\r\n        post(\"/update-ISP\", (req, res) -> {\r\n            Map<String, Object> payload = new HashMap<>();\r\n            String partnerName = req.queryParams(\"partnerName\");\r\n            String partnerEmail = req.queryParams(\"partnerEmail\");\r\n            String description = req.queryParams(\"description\");\r\n            PartnerISP updatedISP = new PartnerISP(partnerName, partnerEmail,description);\r\n            Sql2oPartnerISPDao.updatePartnerISP(updatedISP);\r\n            res.redirect(\"/\");\r\n            return null;\r\n        }, new HandlebarsTemplateEngine());\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/ke/co/safaricom/App.java b/src/main/java/ke/co/safaricom/App.java
+--- a/src/main/java/ke/co/safaricom/App.java	(revision 24ba2dbb9c2cde2b95bf8c101c72d41fbefe0c45)
++++ b/src/main/java/ke/co/safaricom/App.java	(date 1701889107179)
+@@ -2,6 +2,7 @@
+ import ke.co.safaricom.Models.InventoryItem;
+ import ke.co.safaricom.Models.ItemWithPartnerISP;
+ import ke.co.safaricom.Models.PartnerISP;
++import ke.co.safaricom.Models.UserLogin;
+ import ke.co.safaricom.dao.Sql2oInventoryItemDao;
+ import ke.co.safaricom.dao.Sql2oPartnerISPDao;
+ import spark.ModelAndView;
+@@ -16,6 +17,36 @@
+     public static void main(String[] args) {
+         staticFileLocation("/public");
+ 
++
++        get("/login", (req,res)->{
++            Map<String, Object> payload = new HashMap<>();
++            return new ModelAndView(payload, "/userLogin.hbs");
++        }, new HandlebarsTemplateEngine());
++
++
++
++        post("/UserLogin", (req, res) -> {
++                    Map<String, Object> payload = new HashMap<>();
++                    String email = req.queryParams("email");
++                    String password = req.queryParams("password");
++                    UserLogin newlogin = new UserLogin();
++                    if (newlogin.isValidUser(email, password)) {
++                        res.redirect("/");
++                    }else  {
++                // Invalid login, set error message
++                payload.put("error", "Invalid email or password. Please try again.");
++            }
++            return new ModelAndView(payload, "userLogin.hbs");
++        }, new HandlebarsTemplateEngine());
++
++
++        get("/newUsers", (req,res)->{
++            Map<String, Object> payload = new HashMap<>();
++            return new ModelAndView(payload, "/createUser.hbs");
++        }, new HandlebarsTemplateEngine());
++
++
++
+         get("/", (req, res) -> {
+             Map<String, Object> payload = new HashMap<>();
+             List<ItemWithPartnerISP> InventoryWithISP = ItemWithPartnerISP.getAllInventoryWithISPs();
+Index: src/main/java/ke/co/safaricom/Models/PartnerISP.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ke.co.safaricom.Models;\r\n\r\nimport ke.co.safaricom.DB.DB;\r\nimport org.sql2o.Connection;\r\n\r\nimport java.util.List;\r\n\r\npublic class PartnerISP {\r\n    private String partnerName;\r\n    private String partnerEmail;\r\n    private String description;\r\n    private int partnerId;\r\n\r\n    public PartnerISP(String partnerName, String partnerEmail, String description) {\r\n        this.partnerName = partnerName;\r\n        this.partnerEmail = partnerEmail;\r\n        this.description = description;\r\n    }\r\n\r\n    @Override\r\n    public boolean equals(Object otherPartnerISP){\r\n        if (!(otherPartnerISP instanceof PartnerISP)) {\r\n            return false;\r\n        } else {\r\n            PartnerISP newPartnerISP = (PartnerISP) otherPartnerISP;\r\n            return this.getPartnerName().equals(newPartnerISP.getPartnerName()) &&\r\n                    this.getDescription().equals(newPartnerISP.getDescription())&&\r\n                    this.getPartnerEmail().equals(newPartnerISP.getPartnerEmail());\r\n        }\r\n    }\r\n\r\n    public String getPartnerName() {\r\n        return partnerName;\r\n    }\r\n\r\n    public void setPartnerName(String partnerName) {\r\n        this.partnerName = partnerName;\r\n    }\r\n\r\n    public String getPartnerEmail() {\r\n        return partnerEmail;\r\n    }\r\n\r\n    public void setPartnerEmail(String partnerEmail) {\r\n        this.partnerEmail = partnerEmail;\r\n    }\r\n\r\n    public String getDescription() {\r\n        return description;\r\n    }\r\n\r\n    public void setDescription(String description) {\r\n        this.description = description;\r\n    }\r\n\r\n    public int getPartnerId() {\r\n        return partnerId;\r\n    }\r\n\r\n    public void setPartnerId(int partnerId) {\r\n        this.partnerId = partnerId;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/ke/co/safaricom/Models/PartnerISP.java b/src/main/java/ke/co/safaricom/Models/PartnerISP.java
+--- a/src/main/java/ke/co/safaricom/Models/PartnerISP.java	(revision 24ba2dbb9c2cde2b95bf8c101c72d41fbefe0c45)
++++ b/src/main/java/ke/co/safaricom/Models/PartnerISP.java	(date 1701889107180)
+@@ -3,11 +3,16 @@
+ import ke.co.safaricom.DB.DB;
+ import org.sql2o.Connection;
+ 
++<<<<<<< HEAD
++public class   PartnerISP implements DBManagement {
++    private String name;
++=======
+ import java.util.List;
+ 
+ public class PartnerISP {
+     private String partnerName;
+     private String partnerEmail;
++>>>>>>> 770e75ab12c7fe868a67a8464fd04475304e4f8f
+     private String description;
+     private int partnerId;
+ 
+Index: src/main/java/ke/co/safaricom/Models/CreateUser.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/ke/co/safaricom/Models/CreateUser.java b/src/main/java/ke/co/safaricom/Models/CreateUser.java
+new file mode 100644
+--- /dev/null	(date 1701889107180)
++++ b/src/main/java/ke/co/safaricom/Models/CreateUser.java	(date 1701889107180)
+@@ -0,0 +1,141 @@
++package ke.co.safaricom.Models;
++
++import java.sql.*;
++import java.util.List;
++
++public class CreateUser {
++
++    private int userId;
++    private String roles;
++    private String phoneNumber;
++    private String firstName;
++    private String lastName;
++    private String email;
++
++    private String dateRegistered;
++    private String company;
++
++
++    public CreateUser(String firstName, String lastName, String email, String company, String roles, String phoneNumber) {
++        this.firstName = firstName;
++        this.lastName = lastName;
++        this.email = email;
++        this.company = company;
++        this.roles = roles;
++        this.phoneNumber = phoneNumber;
++    }
++
++    public void setUserId(int id) {
++        this.userId = userId;
++    }
++
++    public String getRoles() {
++        return roles;
++    }
++
++    public void setRoles(String roles) {
++        this.roles = roles;
++    }
++
++    public String getPhoneNumber() {
++        return phoneNumber;
++    }
++
++    public void setPhoneNumber(String phoneNumber) {
++        this.phoneNumber = phoneNumber;
++    }
++
++    public String getFirstName() {
++        return firstName;
++    }
++
++    public void setFirstName(String firstName) {
++        this.firstName = firstName;
++    }
++
++    public String getLastName() {
++        return lastName;
++    }
++
++    public void setLastName(String lastName) {
++        this.lastName = lastName;
++    }
++
++    public String getEmail() {
++        return email;
++    }
++
++    public void setEmail(String email) {
++        this.email = email;
++    }
++
++    public String getCompany() {
++        return company;
++    }
++
++    public void setCompany(String company) {
++        this.company = company;
++    }
++    public boolean equals(Object otherLoginUser){
++        if (!(otherLoginUser instanceof CreateUser)) {
++            return false;
++        } else {
++            CreateUser newSystemUser = (CreateUser) otherLoginUser;
++            return this.getFirstName().equals(newSystemUser.getFirstName()) &&
++                    this.getLastName().equals(newSystemUser.getLastName()) &&
++                    this.getEmail().equals(newSystemUser.getEmail()) &&
++                    this.getCompany().equals(newSystemUser.getCompany()) &&
++                    this.getRoles().equals(newSystemUser.getRoles()) &&
++                    this.getPhoneNumber().equals(newSystemUser.getPhoneNumber());
++        }
++    }
++
++
++    public void save() {
++        try (java.sql.Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/root", "postgres", "Moraa@2019")) {
++            String sql = "INSERT INTO  Table Users (firstname, lastName, email, company, roles,phoneNumber) VALUES (?,?,?,?,?,?)";
++            PreparedStatement statement =connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
++            statement.setString(1, this.firstName);
++            statement.setString(2, this.lastName);
++            statement.setString(3, this.email);
++            statement.setString(4, this.company);
++            statement.setString(5, this.roles);
++            statement.setString(6, this.phoneNumber);
++
++            int rowsInserted = statement.executeUpdate();
++
++            if (rowsInserted > 0) {
++                ResultSet generatedKeys = statement.getGeneratedKeys();
++                if (generatedKeys.next()) {
++                    this.userId = generatedKeys.getInt(0);
++                }
++            }
++            connection.commit();
++        } catch (SQLException exception) {
++            System.out.println(exception.getMessage());
++        }
++
++    }
++
++
++    public static List<CreateUser> all () {
++        try (java.sql.Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/root", "postgres", "Moraa@2019")) {
++            String sql = "SELECT * FROM  TABLE Users";
++        } catch (SQLException e) {
++            throw new RuntimeException(e);
++        }
++        return null;
++    }
++
++    public CreateUser find(int userId){
++        try (java.sql.Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/root", "postgres", "Moraa@2019")) {
++            String sql = "SELECT * FROM TABLE Users where UserId = :Id";
++            PreparedStatement statement = connection.prepareStatement(sql);
++            statement.setString(1, String.valueOf(this.userId));
++
++        } catch (SQLException e) {
++            throw new RuntimeException(e);
++        }
++        return null;
++    }
++}
+Index: src/main/java/ke/co/safaricom/Models/UserLogin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/ke/co/safaricom/Models/UserLogin.java b/src/main/java/ke/co/safaricom/Models/UserLogin.java
+new file mode 100644
+--- /dev/null	(date 1701889107181)
++++ b/src/main/java/ke/co/safaricom/Models/UserLogin.java	(date 1701889107181)
+@@ -0,0 +1,72 @@
++package ke.co.safaricom.Models;
++import java.sql.*;
++import ke.co.safaricom.DB.DB;
++import spark.Spark;
++
++import org.sql2o.Sql2o;
++import java.sql.Connection;
++import java.sql.PreparedStatement;
++import java.sql.ResultSet;
++import java.sql.SQLException;
++
++public class UserLogin {
++    private String email;
++    private String password;
++
++    public UserLogin(){
++        this.email =email;
++        this.password = password;
++    }
++
++    public String getEmail(){return email;}
++    public void setEmail(String email){this.email =email;}
++
++    public String getPassword(){return password;}
++    public void setPassword(String password){this.password=password;}
++
++  /*  public boolean isValidUser(String email, String password){
++        String query = "SELECT * FROM  loginCredentials WHERE email=? AND password=?";
++
++        try (Connection connection = DriverManager.getConnection(query);
++             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
++
++            preparedStatement.setString(1, email);
++            preparedStatement.setString(2, password);
++
++            try (ResultSet resultSet = preparedStatement.executeQuery()) {
++                // Check if the result set has any rows
++                if (resultSet.next()) {
++                    // User exists, login is valid
++                    return true;
++                } else {
++                    // User does not exist, login failed
++                    return false;
++                }
++            }
++        } catch (SQLException e) {
++            e.printStackTrace();
++            // Handle database connection or query execution error
++            return false;
++        }*/
++        public boolean isValidUser(String email, String password) {
++            String query = "SELECT * FROM loginCredentials WHERE email=? AND password=?";
++
++            try (Connection connection = DriverManager.getConnection("jdbc:postgresql://root", "postgres", "Moraa@2019");
++                 PreparedStatement preparedStatement = connection.prepareStatement(query)) {
++
++                preparedStatement.setString(1, email);
++                preparedStatement.setString(2, password);
++
++                try (ResultSet resultSet = preparedStatement.executeQuery()) {
++                    // Check if the result set has any rows
++                    return resultSet.next(); // Returns true if a row is found, false otherwise
++                }
++            } catch (SQLException e) {
++                e.printStackTrace();
++                // Handle database connection or query execution error
++                return false;
++            }
++        }
++
++    }
++
+Index: src/main/resources/templates/userLogin.hbs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/userLogin.hbs b/src/main/resources/templates/userLogin.hbs
+new file mode 100644
+--- /dev/null	(date 1701889107183)
++++ b/src/main/resources/templates/userLogin.hbs	(date 1701889107183)
+@@ -0,0 +1,43 @@
++<!DOCTYPE html>
++<html>
++<head>
++    <title>{{#block "title"}}SAFDBB INVENTORY PORTAL{{/block}}</title>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
++    <meta http-equiv="X-UA-Compatible" content="ie=edge">
++    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
++    <link rel="stylesheet" href="/css/main.css">
++    <link rel='stylesheet' href='/css/app.css'>
++</head>
++<body>
++<div class="container">
++    <div class="page-header">
++        <div class="container-fluid">
++            <img src="/public/images/safaricom%20logo.png" class="img-fluid" alt="safaricom logo" style="max-height: 150px;" width="100%">
++        </div>
++        <h1 class="text-center">Inventory management Portal</h1>
++    </div>
++    <div>
++        <h2> welcome to</h2>
++        <h3> Safaricom inventory management system</h3>
++        <p> for better tracking and  support of materials and equipments</p>
++    </div>
++    <h2>User Login</h2>
++    {{#if error}}
++        <p style="color: red;">{{error}}</p>
++    {{/if}}
++    <form action="/UserLogin" method="post">
++        <label for="email">Email:</label>
++        <input type="email" id="email" name="email" required><br><br>
++
++        <label for="password">Password:</label>
++        <input type="password" id="password"  autocomplete="off" name="password" required><br><br>
++
++        <input type="submit" value="Login">
++    </form>
++
++    <p>Forgot your password? <a href="resetPassword.html">Reset Password</a></p>
++    <p>admin <a href="/admin/Login">Admin login</a></p>
++</div>
++</body>
++</html>
+Index: src/main/resources/templates/createUser.hbs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/createUser.hbs b/src/main/resources/templates/createUser.hbs
+new file mode 100644
+--- /dev/null	(date 1701889107182)
++++ b/src/main/resources/templates/createUser.hbs	(date 1701889107182)
+@@ -0,0 +1,45 @@
++{{#partial "content"}}
++    <div class="container">
++        <h2> Create new User Form</h2>
++        <div class="container">
++            <form action="/newUsers" method="post">
++                <div>
++                    <label for="firstname">First Name:</label>
++                    <input type="text" class="form-control" id="firstname" placeholder="Enter first name"name="firstname" required>
++                </div>
++
++                <div>
++                    <label for="lastname">Last Name:</label>
++                    <input type="text" class="form-control" id="lastname" placeholder="Enter lastname" name="lastname" required>
++                </div>
++
++                <div>
++                    <label for="email">Email:</label>
++                    <input type="email" class="form-control" id="email"  placeholder="email" name="email" required>
++                </div>
++
++                <div>
++                    <label for="company">Company:</label>
++                    <input type="text" class="form-control" id="company" placeholder="Enter company" name="company" required>
++                </div>
++
++                <div>
++                    <label for="phoneNumber">Phone Number:</label>
++                    <input type="text" class="form-control" id="phoneNumber" placeholder="Enter phonenumber" name="phoneNumber" required>
++                </div>
++                <div>
++                    <label for="roles">Role</label>
++                    <select id="roles" name="roles" required>
++                        <option value="admin">Admin</option>
++                        <option value="Partner">Partner</option>
++                        <option value="staff">Safaricom staff</option>
++                    </select><br>
++                </div>
++
++                <button class="btn btn-primary" type="submit">Add new user</button>
++            </form>
++
++        </div>
++    </div>
++{{/partial}}
++{{> "layout.hbs"}}
+\ No newline at end of file
+Index: src/main/java/ke/co/safaricom/DB/DB.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ke.co.safaricom.DB;\r\nimport org.sql2o.Sql2o;\r\npublic class DB {\r\n    public static Sql2o sql2o = new Sql2o(\"jdbc:postgresql://localhost:5432/inventorymgt\", \"postgres\", \"Msama@012023\");\r\n    }\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/ke/co/safaricom/DB/DB.java b/src/main/java/ke/co/safaricom/DB/DB.java
+--- a/src/main/java/ke/co/safaricom/DB/DB.java	(revision 24ba2dbb9c2cde2b95bf8c101c72d41fbefe0c45)
++++ b/src/main/java/ke/co/safaricom/DB/DB.java	(date 1701889107179)
+@@ -1,5 +1,27 @@
+ package ke.co.safaricom.DB;
+ import org.sql2o.Sql2o;
++
++import java.sql.Connection;
++import java.sql.DriverManager;
++import java.sql.SQLException;
++
+ public class DB {
+-    public static Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/inventorymgt", "postgres", "Msama@012023");
++    public static Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/root", "postgres", "Moraa@2019");
++
++    public static void main(String[] args) {
++
++        String jdbcURL = "jdbc:postgresql://localhost:5432/root";
++        String username="postgres";
++        String password ="Moraa@2019";
++
++        try{
++            Connection connection = DriverManager.getConnection(jdbcURL, username, password);
++            if(connection != null){
++                System.out.println("connected to database");
++                connection.close();
++            }
++        } catch (SQLException e) {
++            throw new RuntimeException(e);
++        }
++    }
+     }
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+new file mode 100644
+--- /dev/null	(date 1701889107177)
++++ b/README.md	(date 1701889107177)
+@@ -0,0 +1,35 @@
++
++## Project Name
++ - Inventory Management System
++
++## Author
++ - Benjamin Kimutai [Lewis Ng'ate] [Simon Kimani] [Bernard Amaitsa]
++
++## Description 
++ - Inventory Management system is an application that manages inventory of equipment in various partners premises and tracking the movement of equipment from partners to sites, partners to partners and site to warehouse after decommissioning for disposal. 
++
++## Live Page
++ - 
++
++## Installation/Setup instruction 
++ - Open the cloned folder in intelliJ
++ - git clone https://github.com/bkkimutai/inventorymgtsystem5.git
++ - PSQL database
++ - Go Live
++
++## Technologies used
++ - Java
++ - Template Handlebars
++ - Graddle
++ - Git & Github
++
++## Dependancies
++ - 
++
++## License
++ - MIT License
++ - Copyright (c) 2023 Benjamin Kimutai Lewis Maina Simon Muiruri Bernard Amaitsa
++
++=======
++# inventorymgtsystemg5
++
+Index: src/main/resources/db/db.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>SET MODE PostgresSQL;\r\n\r\nCREATE TABLE IF NOT EXISTS inventory(\r\n    itemId int PRIMARY KEY auto_increment,\r\n    itemName VARCHAR,\r\n    itemSerial VARCHAR,\r\n    itemManufacturer VARCHAR,\r\n    partnerId INT,\r\n);\r\n\r\nCREATE TABLE IF NOT EXISTS partnerisps (\r\n   partnerId int PRIMARY KEY auto_increment,\r\n   partnerName VARCHAR,\r\n   partnerEmail VARCHAR,\r\n   description VARCHAR\r\n);
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/db/db.sql b/src/main/resources/db/db.sql
+--- a/src/main/resources/db/db.sql	(revision 24ba2dbb9c2cde2b95bf8c101c72d41fbefe0c45)
++++ b/src/main/resources/db/db.sql	(date 1701889107181)
+@@ -13,4 +13,10 @@
+    partnerName VARCHAR,
+    partnerEmail VARCHAR,
+    description VARCHAR
++);
++
++CREATE TABLE IF NOT EXISTS loginCredentials (
++   userId int PRIMARY KEY auto_increment,
++   userEmail VARCHAR,
++   userPassword VARCHAR,
+ );
+\ No newline at end of file
