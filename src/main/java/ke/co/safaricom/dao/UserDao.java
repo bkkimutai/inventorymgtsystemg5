@@ -3,6 +3,7 @@ package ke.co.safaricom.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLInput;
 import ke.co.safaricom.Models.CreateUser;
 public class UserDao {
     private static final String JDBC_URL = "jdbc:postgresql://localhost:5432/root";
@@ -10,7 +11,7 @@ public class UserDao {
     private static final String JDBC_USER = "postgres";
     private static final String JDBC_PASSWORD = "Moraa@2019";
 
-    public void addUser(CreateUser newUser) {
+    public boolean addUser(CreateUser newUser) {
         String sql = "INSERT INTO users (firstname, lastname, email, company, roles, phonenumber) " +
                 "VALUES (?, ?, ?, ?, ?, ?)";
 
@@ -24,12 +25,13 @@ public class UserDao {
             preparedStatement.setString(4, newUser.getCompany());
             preparedStatement.setString(5, newUser.getRoles());
             preparedStatement.setString(6, newUser.getPhoneNumber());
-
             preparedStatement.executeUpdate();
+
         } catch (Exception e) {
             // Handle exceptions, log, or throw as appropriate
             e.printStackTrace();
         }
+        return false;
     }
 }
 

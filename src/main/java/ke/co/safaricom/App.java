@@ -61,14 +61,22 @@ public class App {
             String company = req.queryParams("company");
             String roles = req.queryParams("roles");
             String phoneNumber = req.queryParams("phoneNumber");
-
             UserDao userDao = new UserDao();
+
+            CreateUser newUser = new CreateUser(firstName, lastName, email, company, roles, phoneNumber);
+            if (userDao.addUser(newUser)){
+                res.redirect("/newUsers.hbs");
+            } else {
+                payload.put("error", "Failed to create new user.");
+            }
+            return new ModelAndView(payload, "createUser.hbs");
             userDao.addUser(new CreateUser(firstName, lastName, email, company, roles, phoneNumber));
 
             res.redirect("/home");
             return null;
 
         }, new HandlebarsTemplateEngine());
+
 
 
         get("/home", (req, res) -> {

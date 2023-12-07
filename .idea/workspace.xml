@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="removed duplication under partnerISP">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/DB/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/DB/DB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/CreateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/CreateUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/UserLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/createUser.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/createUser.hbs" afterDir="false" />
     <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/resources/templates/reports.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 
       <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/PartnerISP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/PartnerISP.java" afterDir="false" />
-
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,6 +239,21 @@
       <option name="presentableId" value="Default" />
       <updated>1697563852016</updated>
     </task>
+
+    <task id="LOCAL-00001" summary="removed duplication under partnerISP">
+      <option name="closed" value="true" />
+      <created>1701930879019</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701930879019</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="removed duplication under partnerISP" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed duplication under partnerISP" />
     <task id="LOCAL-00001" summary="adding readme file">
       <option name="closed" value="true" />
       <created>1701885208998</created>
@@ -264,6 +286,7 @@
     <MESSAGE value="adding idea work space to gitignore" />
     <MESSAGE value="updated partner isp" />
     <option name="LAST_COMMIT_MESSAGE" value="updated partner isp" />
+
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
