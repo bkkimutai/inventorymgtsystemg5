@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/reports.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/PartnerISP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/PartnerISP.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +48,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="README.md" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,7 +74,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;login-registerUser&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Creating-Readme&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Benjamin Kimutai/Documents/moringa_school_projects/CapstoneProject&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -212,10 +215,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PartnerISPTests.save_insertsObjectIntoDatabase_PartnerISP" />
         <item itemvalue="Gradle.PartnerISPTests.all_returnsAllInstancesOfPartnerISPs_true" />
         <item itemvalue="Gradle.PartnerISPTests.find_returnsISPsWithSameId_secondISP" />
         <item itemvalue="Gradle.PartnerISPTests.save_assignsIdToObject" />
-        <item itemvalue="Gradle.PartnerISPTests.save_insertsObjectIntoDatabase_PartnerISP" />
         <item itemvalue="Gradle.PartnerISPTests.equals_returnsTrueIfNameAndEmailAreSame_true" />
       </list>
     </recent_temporary>
@@ -229,7 +232,38 @@
       <option name="presentableId" value="Default" />
       <updated>1697563852016</updated>
     </task>
+    <task id="LOCAL-00001" summary="adding readme file">
+      <option name="closed" value="true" />
+      <created>1701885208998</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701885208998</updated>
+    </task>
+    <task id="LOCAL-00002" summary="adding idea work space to gitignore">
+      <option name="closed" value="true" />
+      <created>1701886315645</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701886315645</updated>
+    </task>
+    <task id="LOCAL-00003" summary="updated partner isp">
+      <option name="closed" value="true" />
+      <created>1701971599831</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701971599831</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adding readme file" />
+    <MESSAGE value="adding idea work space to gitignore" />
+    <MESSAGE value="updated partner isp" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated partner isp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -260,6 +294,24 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/PartnerISPTests.java</url>
+          <line>45</line>
+          <properties class="PartnerISPTests" method="all_returnsAllInstancesOfPartnerISPs_true">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/PartnerISPTests.java</url>
+          <line>56</line>
+          <properties class="PartnerISPTests" method="save_assignsIdToObject">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

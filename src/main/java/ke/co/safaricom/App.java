@@ -48,6 +48,11 @@ public class App {
             return new ModelAndView(payload, "/createUser.hbs");
         }, new HandlebarsTemplateEngine());
 
+
+        get("/reports", (req,res)->{
+            Map<String, Object> payload = new HashMap<>();
+            return new ModelAndView(payload, "/reports.hbs");
+
         post("/newUsers", (req, res)->{
             Map<String, Object> payload = new HashMap<>();
             String firstName = req.queryParams("firstName");
@@ -62,6 +67,7 @@ public class App {
 
             res.redirect("/home");
             return null;
+
         }, new HandlebarsTemplateEngine());
 
 
