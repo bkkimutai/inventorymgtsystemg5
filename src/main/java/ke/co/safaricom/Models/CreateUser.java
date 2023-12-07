@@ -2,6 +2,9 @@ package ke.co.safaricom.Models;
 
 import java.sql.*;
 import java.util.List;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 public class CreateUser {
 
@@ -24,7 +27,7 @@ public class CreateUser {
         this.roles = roles;
         this.phoneNumber = phoneNumber;
     }
-
+public int getUserId(){return userId;}
     public void setUserId(int id) {
         this.userId = userId;
     }
@@ -91,7 +94,7 @@ public class CreateUser {
     }
 
 
-    public void save() {
+   /* public void save() {
         try (java.sql.Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/root", "postgres", "Moraa@2019")) {
             String sql = "INSERT INTO  Table Users (firstname, lastName, email, company, roles,phoneNumber) VALUES (?,?,?,?,?,?)";
             PreparedStatement statement =connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -115,7 +118,7 @@ public class CreateUser {
             System.out.println(exception.getMessage());
         }
 
-    }
+    }*/
 
 
     public static List<CreateUser> all () {
