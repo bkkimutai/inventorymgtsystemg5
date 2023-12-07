@@ -51,7 +51,7 @@ public class UserLogin {
         public boolean isValidUser(String email, String password) {
             String query = "SELECT * FROM loginCredentials WHERE email=? AND password=?";
 
-            try (Connection connection = DriverManager.getConnection("jdbc:postgresql://root", "postgres", "Moraa@2019");
+            try (Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/inventorymgt", "postgres", "Msama@012023");
                  PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
                 preparedStatement.setString(1, email);
