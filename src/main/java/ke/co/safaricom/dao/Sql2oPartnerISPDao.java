@@ -51,15 +51,14 @@ public class Sql2oPartnerISPDao implements PartnerISPDao{
             return null;
         }
     }
-    public void updatePartnerISP(PartnerISP partnerISP) {
+    public static void updatePartnerISP(PartnerISP updatedISP) {
         try (Connection connection = sql2o.open()) {
             connection.createQuery("UPDATE partnerisps SET partnerName = :partnerName, partnerEmail = :partnerEmail, " +
                             "description = :description " +
-                            "WHERE partnerId = :partnerId")
-                    .addParameter("partnerName", partnerISP.getPartnerName())
-                    .addParameter("partnerEmail", partnerISP.getPartnerEmail())
-                    .addParameter("description", partnerISP.getDescription())
-                    .addParameter("partnerId", partnerISP.getPartnerId())
+                            "WHERE partnerName = :partnerName")
+                    .addParameter("partnerName", updatedISP.getPartnerName())
+                    .addParameter("partnerEmail", updatedISP.getPartnerEmail())
+                    .addParameter("description", updatedISP.getDescription())
                     .executeUpdate();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());

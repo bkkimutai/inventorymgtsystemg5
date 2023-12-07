@@ -2,10 +2,10 @@ package ke.co.safaricom;
 import ke.co.safaricom.Models.InventoryItem;
 import ke.co.safaricom.Models.ItemWithPartnerISP;
 import ke.co.safaricom.Models.PartnerISP;
+import ke.co.safaricom.Models.UserLogin;
 import ke.co.safaricom.dao.Sql2oInventoryItemDao;
 import ke.co.safaricom.dao.Sql2oPartnerISPDao;
 import spark.ModelAndView;
-import spark.Session;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import java.util.HashMap;
 import java.util.List;
@@ -17,22 +17,41 @@ public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
 
-        // Define a route for the home page
-        get("/home", (request, response) -> {
-            Session session = request.session();
-            String username = session.attribute("username");
 
-            // Check if the user is authenticated
-            if (username != null) {
-                // Render the dashboard page
-                Map<String, Object> model = new HashMap<>();
-                model.put("username", username);
-                return new ModelAndView(model, "home.hbs");
-            } else {
-                // Redirect to login page if not authenticated
-                response.redirect("/login");
-                return null;
+        get("/", (req,res)->{
+            Map<String, Object> payload = new HashMap<>();
+            return new ModelAndView(payload, "/userLogin.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
+
+        post("/UserLogin", (req, res) -> {
+                    Map<String, Object> payload = new HashMap<>();
+                    String email = req.queryParams("email");
+                    String password = req.queryParams("password");
+                    UserLogin newlogin = new UserLogin();
+                    if (newlogin.isValidUser(email, password)) {
+                        res.redirect("/home");
+                    }else  {
+                // Invalid login, set error message
+                payload.put("error", "Invalid email or password. Please try again.");
             }
+            return new ModelAndView(payload, "userLogin.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
+        get("/newUsers", (req,res)->{
+            Map<String, Object> payload = new HashMap<>();
+            return new ModelAndView(payload, "/createUser.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
+
+        get("/home", (req, res) -> {
+            Map<String, Object> payload = new HashMap<>();
+            List<ItemWithPartnerISP> InventoryWithISP = ItemWithPartnerISP.getAllInventoryWithISPs();
+            payload.put("InventoryWithISP", InventoryWithISP);
+            return new ModelAndView(payload, "layout.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/inventorylist", (req, res) -> {
@@ -66,8 +85,6 @@ public class App {
         //display form to create a new partner ISP
         get("/partnerisps/new", (request, response) -> {
             Map<String, Object> payload = new HashMap<>();
-//            List<Squad> squads = heroSquadDao.getAllSquads();
-//            payload.put("squads", squads);
             return new ModelAndView(payload, "new-partnerisp.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -126,6 +143,24 @@ public class App {
             InventoryItem updatedInventory = new InventoryItem(itemName, itemSerial,itemManufacturer, partnerId);
             Sql2oInventoryItemDao.updateInventory(updatedInventory);
             res.redirect("/inventorylist");
+            return null;
+        }, new HandlebarsTemplateEngine());
+        get("/partnerisps/:partnerId/update-ISP", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int partnerId = Integer.parseInt(request.params("partnerId"));
+            PartnerISP foundISP = Sql2oPartnerISPDao.findPartnerISPById(partnerId);
+            model.put("partnerISP", foundISP);
+            return new ModelAndView(model, "update-ISP.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/update-ISP", (req, res) -> {
+            Map<String, Object> payload = new HashMap<>();
+            String partnerName = req.queryParams("partnerName");
+            String partnerEmail = req.queryParams("partnerEmail");
+            String description = req.queryParams("description");
+            PartnerISP updatedISP = new PartnerISP(partnerName, partnerEmail,description);
+            Sql2oPartnerISPDao.updatePartnerISP(updatedISP);
+            res.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());
     }

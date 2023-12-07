@@ -23,7 +23,7 @@ public interface PartnerISPDao {
     List<ItemWithPartnerISP> getAllPartnersByInventoryItems(int partnerId);
 
     //update
-    void updatePartnerISP(PartnerISP partnerISP);
+    static void updatePartnerISP(PartnerISP partnerISP){};
 
     //delete
     void deletePartnerISPById(int partnerId);
