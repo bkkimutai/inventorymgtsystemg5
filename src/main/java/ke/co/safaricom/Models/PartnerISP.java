@@ -10,13 +10,6 @@ public class PartnerISP {
     private String description;
     private int partnerId;
 
-public class   PartnerISP {
-    private String name;
-        private String partnerName;
-        private String partnerEmail;
-
-        private String description;
-        private int partnerId;
 
         public PartnerISP(String partnerName, String partnerEmail, String description) {
             this.partnerName = partnerName;
