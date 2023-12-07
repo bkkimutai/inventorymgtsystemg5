@@ -21,6 +21,11 @@ public class App {
             return new ModelAndView(payload, "/userLogin.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/logout", (req,res)->{
+            Map<String, Object> payload = new HashMap<>();
+            return new ModelAndView(payload, "/userLogin.hbs");
+        }, new HandlebarsTemplateEngine());
+
 
 
         post("/UserLogin", (req, res) -> {
@@ -55,7 +60,7 @@ public class App {
             UserDao userDao = new UserDao();
             userDao.addUser(new CreateUser(firstName, lastName, email, company, roles, phoneNumber));
 
-            res.redirect("/");
+            res.redirect("/home");
             return null;
         }, new HandlebarsTemplateEngine());
 
@@ -91,7 +96,7 @@ public class App {
             int partnerId = Integer.parseInt(request.queryParams("partnerId"));
             InventoryItem newInventory = new InventoryItem(itemName, itemSerial, itemManufacturer, partnerId);
             Sql2oInventoryItemDao.addInventory(newInventory);
-            response.redirect("/");
+            response.redirect("/home");
             return null;
         }, new HandlebarsTemplateEngine());
 
@@ -109,7 +114,7 @@ public class App {
             String description = request.queryParams("description");
             PartnerISP newISP = new PartnerISP(partnerName, partnerEmail, description);
             Sql2oPartnerISPDao.addPartnerISP(newISP);
-            response.redirect("/");
+            response.redirect("/home");
             return null;
         }, new HandlebarsTemplateEngine());
         //display a single Item from a ISP
@@ -173,7 +178,7 @@ public class App {
             String description = req.queryParams("description");
             PartnerISP updatedISP = new PartnerISP(partnerName, partnerEmail,description);
             Sql2oPartnerISPDao.updatePartnerISP(updatedISP);
-            res.redirect("/");
+            res.redirect("/home");
             return null;
         }, new HandlebarsTemplateEngine());
     }
