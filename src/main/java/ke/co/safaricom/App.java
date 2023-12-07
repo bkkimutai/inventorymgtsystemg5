@@ -21,6 +21,11 @@ public class App {
             return new ModelAndView(payload, "/userLogin.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/logout", (req,res)->{
+            Map<String, Object> payload = new HashMap<>();
+            return new ModelAndView(payload, "/userLogin.hbs");
+        }, new HandlebarsTemplateEngine());
+
 
 
         post("/UserLogin", (req, res) -> {
@@ -43,6 +48,11 @@ public class App {
             return new ModelAndView(payload, "/createUser.hbs");
         }, new HandlebarsTemplateEngine());
 
+
+        get("/reports", (req,res)->{
+            Map<String, Object> payload = new HashMap<>();
+            return new ModelAndView(payload, "/reports.hbs");
+
         post("/newUsers", (req, res)->{
             Map<String, Object> payload = new HashMap<>();
             String firstName = req.queryParams("firstName");
@@ -52,6 +62,7 @@ public class App {
             String roles = req.queryParams("roles");
             String phoneNumber = req.queryParams("phoneNumber");
             UserDao userDao = new UserDao();
+
             CreateUser newUser = new CreateUser(firstName, lastName, email, company, roles, phoneNumber);
             if (userDao.addUser(newUser)){
                 res.redirect("/newUsers.hbs");
@@ -59,6 +70,11 @@ public class App {
                 payload.put("error", "Failed to create new user.");
             }
             return new ModelAndView(payload, "createUser.hbs");
+            userDao.addUser(new CreateUser(firstName, lastName, email, company, roles, phoneNumber));
+
+            res.redirect("/home");
+            return null;
+
         }, new HandlebarsTemplateEngine());
 
 
@@ -176,7 +192,7 @@ public class App {
             String description = req.queryParams("description");
             PartnerISP updatedISP = new PartnerISP(partnerName, partnerEmail,description);
             Sql2oPartnerISPDao.updatePartnerISP(updatedISP);
-            res.redirect("/");
+            res.redirect("/home");
             return null;
         }, new HandlebarsTemplateEngine());
     }
