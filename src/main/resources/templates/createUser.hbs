@@ -1,6 +1,9 @@
 {{#partial "content"}}
     <div class="container">
         <h2> Create new User Form</h2>
+        {{#if error}}
+            <p style="color: red;">{{error}}</p>
+        {{/if}}
         <div class="container">
             <form action="/newUsers" method="post">
                 <div>
