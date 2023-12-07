@@ -18,7 +18,7 @@ public class App {
         staticFileLocation("/public");
 
 
-        get("/login", (req,res)->{
+        get("/", (req,res)->{
             Map<String, Object> payload = new HashMap<>();
             return new ModelAndView(payload, "/userLogin.hbs");
         }, new HandlebarsTemplateEngine());
@@ -31,7 +31,7 @@ public class App {
                     String password = req.queryParams("password");
                     UserLogin newlogin = new UserLogin();
                     if (newlogin.isValidUser(email, password)) {
-                        res.redirect("/");
+                        res.redirect("/home");
                     }else  {
                 // Invalid login, set error message
                 payload.put("error", "Invalid email or password. Please try again.");
@@ -47,7 +47,7 @@ public class App {
 
 
 
-        get("/", (req, res) -> {
+        get("/home", (req, res) -> {
             Map<String, Object> payload = new HashMap<>();
             List<ItemWithPartnerISP> InventoryWithISP = ItemWithPartnerISP.getAllInventoryWithISPs();
             payload.put("InventoryWithISP", InventoryWithISP);

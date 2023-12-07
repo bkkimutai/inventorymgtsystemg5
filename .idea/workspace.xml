@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="New branch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/DB/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/DB/DB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/PartnerISP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/PartnerISP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/UserLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/db.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +90,7 @@
       <recent name="ke.co.safaricom.Models" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PartnerISPTests.all_returnsAllInstancesOfPartnerISPs_true">
+  <component name="RunManager">
     <configuration name="PartnerISPTests.all_returnsAllInstancesOfPartnerISPs_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
