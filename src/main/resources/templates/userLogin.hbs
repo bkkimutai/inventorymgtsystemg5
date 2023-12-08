@@ -1,43 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{#block "title"}}SAFDBB INVENTORY PORTAL{{/block}}</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel='stylesheet' href='/css/app.css'>
-</head>
-<body>
-<div class="container">
-    <div class="page-header">
-        <div class="container-fluid">
-            <img src="/public/images/safaricom%20logo.png" class="img-fluid" alt="safaricom logo" style="max-height: 150px;" width="100%">
+{{#partial "content"}}
+    <h2 class="text-center">Welcome to Safaricom inventory management system</h2>
+
+        <div class="row justify-content-center">
+
+                <form action="/UserLogin" method="post" >
+
+                    <div class="form-group" >
+                        <label for="email">Email:</label>
+                        <input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email address" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" aria-describedby="emailHelp" placeholder="Enter your passcode" name="password" required>
+                    </div>
+
+                    <p class="text-center">
+                        <button class="btn btn-primary" type="submit">Login <i class="fa fa-save"></i></button>
+                    </p>
+                </form>
         </div>
-        <h1 class="text-center">Inventory management Portal</h1>
-    </div>
-    <div>
-        <h2> welcome to</h2>
-        <h3> Safaricom inventory management system</h3>
-        <p> for better tracking and  support of materials and equipments</p>
-    </div>
-    <h2>User Login</h2>
-    {{#if error}}
-        <p style="color: red;">{{error}}</p>
-    {{/if}}
-    <form action="/UserLogin" method="post">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password"  autocomplete="off" name="password" required><br><br>
 
-        <input type="submit" value="Login">
-    </form>
 
-    <p>Forgot your password? <a href="resetPassword.html">Reset Password</a></p>
-    <p>admin <a href="/admin/Login">Admin login</a></p>
-</div>
-</body>
-</html>
+{{/partial}}
+{{> "layout.hbs"}}

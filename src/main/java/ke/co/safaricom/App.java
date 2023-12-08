@@ -48,7 +48,6 @@ public class App {
             return new ModelAndView(payload, "/createUser.hbs");
         }, new HandlebarsTemplateEngine());
 
-
         get("/reports", (req,res)->{
             Map<String, Object> payload = new HashMap<>();
             return new ModelAndView(payload, "/reports.hbs");
@@ -76,8 +75,6 @@ public class App {
             return null;
 
         }, new HandlebarsTemplateEngine());
-
-
 
         get("/home", (req, res) -> {
             Map<String, Object> payload = new HashMap<>();
@@ -192,7 +189,8 @@ public class App {
             String description = req.queryParams("description");
             PartnerISP updatedISP = new PartnerISP(partnerName, partnerEmail,description);
             Sql2oPartnerISPDao.updatePartnerISP(updatedISP);
-            res.redirect("/home");
+            res.redirect("/inventorylist");
+
             return null;
         }, new HandlebarsTemplateEngine());
     }

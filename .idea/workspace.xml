@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="removed duplication under partnerISP">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/App.java" afterDir="false" />
@@ -14,9 +15,12 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/createUser.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/createUser.hbs" afterDir="false" />
     <list default="true" id="eb992631-4d0f-4658-9906-89037979c1b6" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/resources/templates/reports.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/PartnerISP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Models/PartnerISP.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,13 +59,12 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+
         <entry key="$PROJECT_DIR$" value="README.md" />
+
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -81,7 +84,9 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+
     &quot;git-widget-placeholder&quot;: &quot;Creating-Readme&quot;,
+
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Benjamin Kimutai/Documents/moringa_school_projects/CapstoneProject&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -240,52 +245,36 @@
       <updated>1697563852016</updated>
     </task>
 
-    <task id="LOCAL-00001" summary="removed duplication under partnerISP">
+    <task id="LOCAL-00001" summary="New branch">
       <option name="closed" value="true" />
-      <created>1701930879019</created>
+      <created>1701847286663</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1701930879019</updated>
+      <updated>1701847286664</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
-    <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed duplication under partnerISP" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed duplication under partnerISP" />
-    <task id="LOCAL-00001" summary="adding readme file">
+    <task id="LOCAL-00002" summary="New branch">
       <option name="closed" value="true" />
-      <created>1701885208998</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1701885208998</updated>
-    </task>
-    <task id="LOCAL-00002" summary="adding idea work space to gitignore">
-      <option name="closed" value="true" />
-      <created>1701886315645</created>
+      <created>1701847380214</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1701886315645</updated>
+      <updated>1701847380214</updated>
     </task>
-    <task id="LOCAL-00003" summary="updated partner isp">
+    <task id="LOCAL-00003" summary="New branch">
       <option name="closed" value="true" />
-      <created>1701971599831</created>
+      <created>1701887218044</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1701971599831</updated>
+      <updated>1701887218044</updated>
     </task>
     <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adding readme file" />
-    <MESSAGE value="adding idea work space to gitignore" />
-    <MESSAGE value="updated partner isp" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated partner isp" />
+    <MESSAGE value="New branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="New branch" />
 
   </component>
   <component name="XDebuggerManager">
