@@ -4,13 +4,12 @@ import ke.co.safaricom.DB.DB;
 import org.sql2o.Connection;
 import java.util.List;
 
-public class   PartnerISP {
-    private String name;
-        private String partnerName;
-        private String partnerEmail;
+public class PartnerISP {
+    private String partnerName;
+    private String partnerEmail;
+    private String description;
+    private int partnerId;
 
-        private String description;
-        private int partnerId;
 
         public PartnerISP(String partnerName, String partnerEmail, String description) {
             this.partnerName = partnerName;
