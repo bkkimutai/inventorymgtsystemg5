@@ -45,8 +45,6 @@ public class App {
             return new ModelAndView(payload, "/createUser.hbs");
         }, new HandlebarsTemplateEngine());
 
-
-
         get("/home", (req, res) -> {
             Map<String, Object> payload = new HashMap<>();
             List<ItemWithPartnerISP> InventoryWithISP = ItemWithPartnerISP.getAllInventoryWithISPs();
@@ -160,7 +158,7 @@ public class App {
             String description = req.queryParams("description");
             PartnerISP updatedISP = new PartnerISP(partnerName, partnerEmail,description);
             Sql2oPartnerISPDao.updatePartnerISP(updatedISP);
-            res.redirect("/");
+            res.redirect("/inventorylist");
             return null;
         }, new HandlebarsTemplateEngine());
     }
